@@ -2,6 +2,9 @@ body {
   background: #f4f4f4;
   font: 0.9em "Ubuntu", "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
 }
+.site-title {
+  color: #ff6f00;
+}
 a {
   color: #e65100;
 }
