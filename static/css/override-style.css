@@ -1,0 +1,97 @@
+body {
+  background: #f4f4f4;
+  font: 0.9em "Ubuntu", "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #e65100;
+}
+a:visited {
+  color: #e65100;
+}
+code {
+  font: 0.9em "Ubuntu Mono", "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  color: #fff;
+  background-color: #333;
+  display: block;
+  padding: 10px 10px;
+}
+.archive-article-header a:hover,
+.layout-wrap-inner.tag-cloud a:hover,
+.timeline-row .content h1 a:hover,
+.archive-article-header a:visited:hover,
+.layout-wrap-inner.tag-cloud a:visited:hover,
+.timeline-row .content h1 a:visited:hover {
+  color: #e65100;
+}
+#header a:hover {
+  color: #e65100;
+}
+.search-form-input:focus,
+.search-form-input.ins-search-input:focus,
+.search-form-input.st-ui-search-input:focus,
+.search-form-input.st-default-search-input:focus {
+  border-color: #e65100 !important;
+}
+#profile .inner .base-info #follow {
+  background: #ff6f00;
+}
+#profile .inner .base-info #follow:hover {
+  background: #e65100;
+}
+.article-inner {
+  box-shadow: 0px 1px 2px rgba(50, 50, 50, 0.30);
+}
+.article-title {
+  color: #3d4036;
+}
+.article-entry a {
+    color: #e65100;
+}
+.article-meta a:hover {
+  color: #e65100;
+}
+.article-more-link a {
+  background: #ff6f00;
+  color: #fff;
+  text-shadow: 0 1px #e65100;
+}
+.article-more-link a:hover {
+  background: #e65100;
+  text-shadow: 0 1px #bf360c;
+}
+#comments a {
+  color: #e65100;
+}
+.widget a:hover {
+  color: #e65100;
+}   
+.archive-year-wrap .archive-year:hover,
+.archive-category-wrap .archive-year:hover,
+.archive-tag-wrap .archive-year:hover,
+.layout-title .archive-year:hover {
+  color: #e65100;
+}
+#page-nav a:hover {
+  background: #e65100;
+}
+.timeline-row .node {
+  background-color: #e65100;
+}
+#recent-post li .item-inner a a,
+#recent-post li .item-inner .item-category a {
+  color: #e65100;
+}
+#recent-post li:hover .item-title a {
+  color: #e65100;
+}
+#footer a {
+  color: #e65100;
+}
+
+/* for visited links */
+.article-meta a {
+  color: #565a5f;
+}
+.widget a {
+  color: #777;
+}
