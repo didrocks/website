@@ -1,0 +1,88 @@
+title = "~DidRocks"
+languageCode = "en-us"
+#baseurl = "http://blog.didrocks.fr/"
+baseurl = "//localhost:8000/"
+defaultContentLanguage = "en-us"
+
+# tocheck
+footnotereturnlinkcontents = "↩"
+# Enable comments by entering your Disqus shortname
+#disqusShortname = "spf13"
+paginate = 10
+theme = "hugo-icarus-theme"
+
+
+
+[permalinks]
+  blog = "/:year/:month/:day/:title"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
+[params]
+    author = "Didier Roche"
+    bio = "Ubuntu contributor - Open source developer - @Canonical"
+    location = "France"
+    site_description = "DidRocks' blog on open source and related developer activities"
+    copyright  = "Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice)."
+    avatar = "css/images/avatar.png"
+    logo = "css/images/logo.png"
+
+    date_format = "02 January 2006"
+
+    # Add custom assets with their paths relative to the static folder
+	custom_css = ["css/override-style.css"]
+	custom_js  = []
+
+[[params.menu]]
+    before = false
+    label  = "Tags"
+    link   = "tags/"
+
+[[params.menu]]
+    before = false
+    label  = "About me"
+    link   = "about/"
+
+[params.profile]
+    follow_button = "https://github.com/didrocks"
+
+
+[social]
+    github          = "didrocks"
+    gitlab          = ""
+    bitbucket       = ""
+    jsfiddle        = ""
+    codepen         = ""
+    foursquare      = ""
+    dribbble        = ""
+    deviantart      = ""
+    behance         = ""
+    flickr          = ""
+    instagram       = ""
+    youtube         = ""
+    vimeo           = ""
+    vine            = ""
+    medium          = ""
+    wordpress       = ""
+    tumblr          = ""
+    xing            = ""
+    linkedin        = ""
+    slideshare      = ""
+    stackoverflow   = ""
+    reddit          = ""
+    pinterest       = ""
+    googleplus      = "+DidierRoche"
+    facebook        = ""
+    facebook_admin  = ""
+    twitter_domain  = ""
+    twitter         = "didrocks"
+
+# Enable and disable widgets for the right sidebar
+[params.widgets]
+    recent_articles = true
+    categories = false
+    tags = false
+    tag_cloud = true
