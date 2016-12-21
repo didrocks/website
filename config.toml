@@ -37,10 +37,10 @@ paginate = 10
     label  = "Tags"
     link   = "tags/"
 
-[[params.menu]]
-    before = false
-    label  = "About me"
-    link   = "about/"
+#[[params.menu]]
+#    before = false
+#    label  = "About me"
+#    link   = "about/"
 
 [params.profile]
     follow_button = "https://github.com/didrocks"
