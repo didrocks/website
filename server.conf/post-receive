@@ -1,0 +1,17 @@
+#!/bin/bash                                  
+set -e                                       
+SITE=did                                     
+                                             
+BASE=../../sites                             
+while read oldrev newrev ref                 
+do                                           
+    if [[ $ref =~ .*/master$ ]];             
+    then                                     
+        SITE_DIR=$BASE/$SITE                 
+        git --work-tree=$SITE_DIR checkout -f
+        cd $SITE_DIR                         
+        $BASE/hugo/hugo                      
+        echo "Deployed"                      
+    fi                                       
+done                                         
+
