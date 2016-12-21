@@ -1,5 +1,6 @@
 title = "~DidRocks"
 baseurl = "/"
+theme = "hugo-icarus-theme"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
 
@@ -8,9 +9,6 @@ footnotereturnlinkcontents = "↩"
 # Enable comments by entering your Disqus shortname
 #disqusShortname = "spf13"
 paginate = 10
-theme = "hugo-icarus-theme"
-
-
 
 [permalinks]
   blog = "/:year/:month/:day/:title"
@@ -47,7 +45,13 @@ theme = "hugo-icarus-theme"
 
 [params.profile]
     follow_button = "https://github.com/didrocks"
+# Enable and disable widgets for the right sidebar
 
+[params.widgets]
+    recent_articles = true
+    categories = false
+    tags = false
+    tag_cloud = true
 
 [social]
     github          = "didrocks"
@@ -79,9 +83,3 @@ theme = "hugo-icarus-theme"
     twitter_domain  = ""
     twitter         = "didrocks"
 
-# Enable and disable widgets for the right sidebar
-[params.widgets]
-    recent_articles = true
-    categories = false
-    tags = false
-    tag_cloud = true
