@@ -1,7 +1,6 @@
 title = "~DidRocks"
+baseurl = "/"
 languageCode = "en-us"
-#baseurl = "http://blog.didrocks.fr/"
-baseurl = "//localhost:8000/"
 defaultContentLanguage = "en-us"
 
 # tocheck
