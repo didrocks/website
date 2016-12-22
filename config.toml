@@ -1,5 +1,5 @@
 title = "~DidRocks"
-baseurl = "/"
+baseurl = "https://didrocks.fr"
 theme = "hugo-icarus-theme"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
