@@ -1,5 +1,5 @@
 +++
-title = "Changement de licence de la documentation d&#39;ubuntu-fr"
+title = "Changement de licence de la documentation d'ubuntu-fr"
 date = "2009-07-15T09:40:00+02:00"
 aliases = ["/post/Changement-de-licence-de-la-documentation-d39%3Bubuntu-fr"]
 +++

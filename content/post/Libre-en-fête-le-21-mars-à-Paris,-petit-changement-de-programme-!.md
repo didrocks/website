@@ -7,7 +7,7 @@ aliases = ["/post/Libre-en-f%C3%AAte-le-21-mars-%C3%A0-Paris%2C-petit-changement
 
 
 
-<p>Dans le cadre de l&#39;évènement « <a href="http://www.libre-en-fete.net/" hreflang="fr">Libre en Fête</a> », ubuntu-fr sera présent dans une salle à la <a href="http://maps.google.fr/maps?oe=utf-8&amp;rls=com.ubuntu:fr:unofficial&amp;client=firefox-a&amp;q=2,+rue+Eug%C3%A8ne+Spuller+75003+PARIS&amp;um=1&amp;ie=UTF-8&amp;split=0&amp;gl=fr&amp;ei=UprASaujNJC0jAew9Pkt&amp;sa=X&amp;oi=geocode_result&amp;resnum=1&amp;ct=title" hreflang="fr">mairie du 3ème</a> pour tenir un stand, organiser des tables rondes et quelques présentations de la distribution ubuntu, de l'association, son objectif, ses besoins, ses actions…</p>
+<p>Dans le cadre de l'évènement « <a href="http://www.libre-en-fete.net/" hreflang="fr">Libre en Fête</a> », ubuntu-fr sera présent dans une salle à la <a href="http://maps.google.fr/maps?oe=utf-8&amp;rls=com.ubuntu:fr:unofficial&amp;client=firefox-a&amp;q=2,+rue+Eug%C3%A8ne+Spuller+75003+PARIS&amp;um=1&amp;ie=UTF-8&amp;split=0&amp;gl=fr&amp;ei=UprASaujNJC0jAew9Pkt&amp;sa=X&amp;oi=geocode_result&amp;resnum=1&amp;ct=title" hreflang="fr">mairie du 3ème</a> pour tenir un stand, organiser des tables rondes et quelques présentations de la distribution ubuntu, de l'association, son objectif, ses besoins, ses actions…</p>
 
 
 <p>Cela se déroulera ce samedi de 16h à 18h.</p>

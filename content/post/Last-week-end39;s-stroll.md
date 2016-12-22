@@ -1,5 +1,5 @@
 +++
-title = "Last week-end&#39;s stroll"
+title = "Last week-end's stroll"
 date = "2009-03-09T12:00:00+01:00"
 aliases = ["/post/Last-week-end39%3Bs-stroll"]
 +++

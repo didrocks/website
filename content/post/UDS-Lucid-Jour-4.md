@@ -31,7 +31,7 @@ Il y aura un aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<sup>[<a href="#pnote-145-1">1</a>]<
 <p>La dernière session de la journée a présenté un nouvel outil pour scanner<sup>[<a href="#pnote-145-2">2</a>]</sup> mais en ayant une GUI simplifiée et utilisable par un être humain classique. :) Robert Ancell a écrit une première version qui devrait remplacer xsane par défaut dans Lucid.<p>
 
 
-<p>Plus qu&#39;une journée ! Le meilleur reste à venir :)</p>
+<p>Plus qu'une journée ! Le meilleur reste à venir :)</p>
 <div><h4>Notes</h4>
 <p>[<a href="#rev-pnote-145-1">1</a>] © vuntz<p>
 <p>[<a href="#rev-pnote-145-2">2</a>] utilisant sane en arrière plan</p><div>

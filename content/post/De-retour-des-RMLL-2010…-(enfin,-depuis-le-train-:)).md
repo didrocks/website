@@ -15,7 +15,7 @@ aliases = ["/post/De-retour-des-RMLL-2010%E2%80%A6-%28enfin%2C-depuis-le-train-%
 <p>Bref, il est temps de rentrer avant une semaine de travail chargée.</p>
 
 
-<p>PS: Évidemment, nous avons enfin pu profiter d&#39;une glace ensemble pour terminer les RMLL en beauté !</p>
+<p>PS: Évidemment, nous avons enfin pu profiter d'une glace ensemble pour terminer les RMLL en beauté !</p>
 <div><h4>Notes</h4>
 <p>[<a href="#rev-pnote-194-1">1</a>] et surtout les soirées !<p>
 <p>[<a href="#rev-pnote-194-2">2</a>] preuve que cet évènement est très très mal fréquenté ;)<p>

@@ -1,5 +1,5 @@
 +++
-title = "En direct du Guadec (GNOME developers conference) après une semaine d&#39;ubuntu Sprint"
+title = "En direct du Guadec (GNOME developers conference) après une semaine d'ubuntu Sprint"
 date = "2010-07-28T09:55:00+02:00"
 aliases = ["/post/En-direct-du-Guadec-%28GNOME-developers-conference%29-apr%C3%A8s-une-semaine-d39%3Bubuntu-Sprint"]
 +++

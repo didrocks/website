@@ -1,5 +1,5 @@
 +++
-title = "Ubuntu Party 10.04, c&#39;est déjà fini!"
+title = "Ubuntu Party 10.04, c'est déjà fini!"
 date = "2010-05-31T16:47:00+02:00"
 aliases = ["/post/Ubuntu-Party-10.04%2C-c39%3Best-d%C3%A9j%C3%A0-fini%21"]
 +++

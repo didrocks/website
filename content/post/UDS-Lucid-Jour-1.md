@@ -15,7 +15,7 @@ aliases = ["/post/UDS-Lucid-Jour-1"]
 - Session sur Geoclue: imaginez, vous voyagez et allez, par exemple, de Paris à Dallas. Il ne serait pas appréciable que votre horloge puisse se synchroniser automatiquement sur le bon timezone. Le fait également de permettre la géolocalisation et le partage de votre position actuelle par empathy a été abordée. Il va y avoir des tests et des patchs testés afin de savoir si cela sera disponible pour lucid (mais sûrement pas activé par défaut concernant le partage de la position actuelle).</p>
 
 
-<p>Après le repas, les sessions en plénières de midi se sont déroulées. La première étant sur « comment avoir une bonne session de travail ». Jono a partagé ses 7 dernières expériences à l&#39;UDS sur ce sujet. Ensuite, Matthew Paul Thomas a présenté le travail qui sera effectué sur le Software Center pour lucid au niveau Design. Par mal de travail sur les sessions à venir cette semaine.
+<p>Après le repas, les sessions en plénières de midi se sont déroulées. La première étant sur « comment avoir une bonne session de travail ». Jono a partagé ses 7 dernières expériences à l'UDS sur ce sujet. Ensuite, Matthew Paul Thomas a présenté le travail qui sera effectué sur le Software Center pour lucid au niveau Design. Par mal de travail sur les sessions à venir cette semaine.
 Ensuite, Rick Spencer et moi-même avons présenté une session sur <a href="http://launchpad.net/quickly" hreflang="en">Quickly</a>. Pas mal de retours et d'intérêt sur ce projet qui a débuté au dernier UDS. Mercredi donnera lieu à une session de deux heures sur le sujet et le devenir de la 0.4.</p>
 
 

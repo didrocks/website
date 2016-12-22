@@ -6,7 +6,7 @@ aliases = ["/post/Sommes-nous-encore-dans-une-d%C3%A9mocratie"]
     <p>C'est à se demander quand on voit qu'une bourde proférée par notre ministre de <del>l'inculture</del> la culture invoquant <a href="http://www.pcinpact.com/actu/news/49573-hadopi-riposte-communication-quadrature-net.htm" hreflang="fr">« 5 gus dans un garage »</a>, Christine Albanel, montrant un mépris et une méconnaissance totale du dossier qu'elle essaie d'imposer<sup>[<a href="#39;en rappellera !<p>
 
 
-<p>Pour avoir plus d&#39;information sur cette loi liberticide :</p>
+<p>Pour avoir plus d'information sur cette loi liberticide :</p>
 <ul>
 <li><a href="http://e.blip.tv/scripts/flash/showplayer.swf?file=http%3A%2F%2Fblip.tv/rss/flash/1753778&amp;showplayerpath=http%3A%2F%2Fblip.tv/scripts/flash/showplayer.swf&amp;feedurl=http%3A//Framasoft.blip.tv/rss/flash&amp;brandname=Framasoft&amp;brandlink=http%3A//www.framasoft.org&amp;enablejs=true&amp;tabType3=none&amp;tabType1=details&amp;tabType2=guide&amp;tabTitle1=A%20propos&amp;tabTitle2=FramaTube&amp;tabUrl2=http%3A//Framasoft.blip.tv/rss/flash" hreflang="fr">Vidéo</a></li>
 <li><a href="http://www.maitre-eolas.fr/" title="fr">Hadopi mon amie, qui es-tu ?</a></li>

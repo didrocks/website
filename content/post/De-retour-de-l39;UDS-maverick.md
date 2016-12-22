@@ -1,5 +1,5 @@
 +++
-title = "De retour de l&#39;UDS maverick"
+title = "De retour de l'UDS maverick"
 date = "2010-05-15T11:11:00+02:00"
 aliases = ["/post/De-retour-de-l39%3BUDS-maverick"]
 +++

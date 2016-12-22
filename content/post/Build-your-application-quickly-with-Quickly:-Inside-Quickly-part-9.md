@@ -120,7 +120,7 @@ $ quickly release &lt;release_number&gt; notes about changes
 </pre>
 
 
-<p>&lt;version&gt; and &lt;description of the release&gt; are optional. Let&#39;s see first without them:</p>
+<p>&lt;version&gt; and &lt;description of the release&gt; are optional. Let's see first without them:</p>
 
 <pre>
 $ quickly release

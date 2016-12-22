@@ -1,5 +1,5 @@
 +++
-title = "La bug jam à Paris ? C&#39;est dimanche !"
+title = "La bug jam à Paris ? C'est dimanche !"
 date = "2009-02-20T07:15:00+01:00"
 aliases = ["/post/La-bug-jam-%C3%A0-Paris-C39%3Best-dimanche-%21"]
 +++
@@ -9,8 +9,8 @@ aliases = ["/post/La-bug-jam-%C3%A0-Paris-C39%3Best-dimanche-%21"]
 <p><img src="/public/ubuntu-fr/globalbugjam_big_logo.png" alt="Logo Bug Jam avec titre" style="display:block;margin:0 auto" title="Logo Bug Jam avec titre, fév. 2009"></p>
 
 
-<p>Mais qu&#39;est-ce qu&#39;une bug jam ? Au risque de paraphraser mon <a href="http://suivi.ubuntu-fr.org/post/Participez-a-la-Ubuntu-globale-Bug-jam-21/22-fevrier" hreflang="fr">dernier billet</a> sur le blog de suivi, voici une définition que l&#39;on pourrait donner :
-<q>Plusieurs personnes se réunissent autour de contributeurs expérimentés, pour tous ensemble, chasser/trier des bugs. Vous voulez contribuer à Ubuntu ? Pas besoin d&#39;être développeur ! Venez participer et apprendre le triage de bug dans une atmosphère chaleureuse et conviviale.</q></p>
+<p>Mais qu'est-ce qu'une bug jam ? Au risque de paraphraser mon <a href="http://suivi.ubuntu-fr.org/post/Participez-a-la-Ubuntu-globale-Bug-jam-21/22-fevrier" hreflang="fr">dernier billet</a> sur le blog de suivi, voici une définition que l'on pourrait donner :
+<q>Plusieurs personnes se réunissent autour de contributeurs expérimentés, pour tous ensemble, chasser/trier des bugs. Vous voulez contribuer à Ubuntu ? Pas besoin d'être développeur ! Venez participer et apprendre le triage de bug dans une atmosphère chaleureuse et conviviale.</q></p>
 
 
 <p>Pour plus d'information, veuillez vous référer au billet sur le <a href="http://suivi.ubuntu-fr.org/" hreflang="fr">blog de suivi</a> d'ubuntu-fr.</p>

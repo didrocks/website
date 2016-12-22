@@ -37,7 +37,7 @@ This party was particular in the sense that <a href="http://en.wikipedia.org/wik
 <p><img src="/public/Ubuntu_Party/.couloir9.10_m.jpg" alt="couloir9.10.jpg" style="display:block;margin:0 auto" title="couloir9.10.jpg, nov. 2009"></p>
 
 
-<p>As at each Party, we also had our ubuntu-fr booth with a lot of goodies : our French localized ubuntu CD, stickers, Tee-Shirts, Framakey Ubuntu-fr remix (USB key), our updated mug, Simple Comme Ubuntu (ubuntu book)... I&#39;ll specifically talk about them in the following days.</p>
+<p>As at each Party, we also had our ubuntu-fr booth with a lot of goodies : our French localized ubuntu CD, stickers, Tee-Shirts, Framakey Ubuntu-fr remix (USB key), our updated mug, Simple Comme Ubuntu (ubuntu book)... I'll specifically talk about them in the following days.</p>
 
 
 <p><img src="/public/Ubuntu_Party/.boutique9.10_m.jpg" alt="boutique9.10.jpg" style="display:block;margin:0 auto" title="boutique9.10.jpg, nov. 2009"></p>

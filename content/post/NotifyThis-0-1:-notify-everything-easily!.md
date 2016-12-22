@@ -17,7 +17,7 @@ aliases = ["/post/NotifyThis-0.1%3A-notify-everything-easily%21"]
 <p>Source file is in XML (default in /etc/notifythis-data.xml):</p>
 
 <pre> &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
- &lt;notifythis xmlns=&#39;http://launchpad.net/notifythis&#39; xml:lang=&#39;fr&#39;&gt;
+ &lt;notifythis xmlns='http://launchpad.net/notifythis' xml:lang='fr'&gt;
    &lt;notiftypes&gt;
        &lt;type&gt;
            &lt;name&gt;lesson&lt;/name&gt;
@@ -78,7 +78,7 @@ aliases = ["/post/NotifyThis-0.1%3A-notify-everything-easily%21"]
 <p>You associate an event instance (in <strong>notifevents/event</strong> ) to a <strong>notifytypes/type/name</strong> declared in the file. Types enables you to set some default priorities and icons to events. &lt;Icon&gt; refers to a path to an icon, which can be local to your computer or distant served by your preferred web server (http://…). In the latter case, NT will cache it for you locally. Consequently, using multiple times the same icon in different types or events will download it only once.</p>
 
 
-<p>Title is used as… notification title and content as… content :) &lt;time&gt; is used to specify when the event will be notified. Categorizing your event is just a way to avoid multiple icon/priority definitions, but those two values can be overridden for a particular event simply specifying corresponding tag (&lt;icon&gt; for instance). If it can&#39;t be found, event type icon will be shown. If this one doesn&#39;t exist/can&#39;t be reachable either, a warning is spawn in log file and no icon will be displayed.</p>
+<p>Title is used as… notification title and content as… content :) &lt;time&gt; is used to specify when the event will be notified. Categorizing your event is just a way to avoid multiple icon/priority definitions, but those two values can be overridden for a particular event simply specifying corresponding tag (&lt;icon&gt; for instance). If it can't be found, event type icon will be shown. If this one doesn't exist/can't be reachable either, a warning is spawn in log file and no icon will be displayed.</p>
 
 
 <p>So, you can for your event, but it can be bound with any kind of other things like calendar, TODO items, and so on…</p>
