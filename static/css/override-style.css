@@ -73,6 +73,9 @@ pre > code {
   background: #e65100;
   text-shadow: 0 1px #bf360c;
 }
+.archive-article {
+  padding: 1em;
+}
 #comments a {
   color: #e65100;
 }
