@@ -53,6 +53,7 @@ pre > code {
   margin: auto;
   width: auto;
   height: auto;
+  margin-top: 0.4em;
 }
 .article-title {
   color: #3d4036;
