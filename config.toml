@@ -28,6 +28,7 @@ paginate = 10
     logo = "css/images/logo.png"
 
     date_format = "02 January 2006"
+    mainSections = ["post", "blog"]
 
 	custom_css = ["css/override-style.css"]
 	custom_js  = []
