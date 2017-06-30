@@ -1,7 +1,7 @@
 ---
 title: "Ubuntu Make as a classic snap: intro"
 date: 2017-07-05T10:26:24+02:00
-tags: [ "snaps", "ubuntu-make", "uld", "ubuntulovesdevs" ]
+tags: [ "snaps", "ubuntu-make", "uld", "ubuntulovesdevs", "pu" ]
 banner: "public/ubuntu/uld.svg"
 type: "post"
 slug: "ubuntu-make-as-classic-snap-intro"
