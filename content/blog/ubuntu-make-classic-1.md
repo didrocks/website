@@ -5,7 +5,6 @@ tags: [ "snaps", "ubuntu-make", "uld", "ubuntulovesdevs", "pu" ]
 banner: "public/ubuntu/uld.svg"
 type: "post"
 slug: "ubuntu-make-as-classic-snap-intro"
-draft: true
 ---
 
 As [Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make) is now in the community’s hands and we got some excellent regular contributors, one of those even became a core committer (good work again [Galileo](https://github.com/LyzardKing))! To be fair, they did most of the work in the past year. However, I was still a bottleneck for one thing: doing releases and pushing the debian package in Ubuntu. I thus recently took some time to turn the popular tool Ubuntu Make into a snap to see what the experience of switching a complex project to a snap could be like. That way, the community will be able to directly deliver from upstream to their users!
