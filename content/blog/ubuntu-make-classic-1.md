@@ -40,3 +40,8 @@ All commands are now available with `ubuntu-make.umake`!
 You will get the latest and greatest directly from our master branch! :)
  
 In the next post, we are going to deep dive into the technical details and implications of what was required in the journey to snapping it!
+
+# Published parts:
+
+ * [Ubuntu Make as a classic snap: intro](https://didrocks.fr/2017/07/05/ubuntu-make-as-a-classic-snap-intro/)
+ * [Ubuntu Make as a classic snap: getting a 16.04 snap](https://didrocks.fr/2017/07/12/ubuntu-make-as-a-classic-snap-getting-a-16.04-snap/)
