@@ -54,7 +54,9 @@ Now that we have a classic snap working on every ubuntu versions, it was high ti
  
 It was just a question of clicking and setting things up in a few minutes, and here we go! From commit in master to having the snap delivered in the edge channel is just a question of minutes! We can then ask for the bug reporter to test the fix or the new feature in less than half an hour in some case! Small and efficient tight loop delivery pipeline for the win.
 
-We even got [a badge](https://github.com/ubuntu/ubuntu-make) added to our `README.md` to link users to our snap being the latest master. Asking people to test latest and greatest few minutes after committing a fix has never being easier!
+We even got [a badge](https://github.com/ubuntu/ubuntu-make) added to our *README.md* to link users to our snap being the latest master. Asking people to test latest and greatest few minutes after committing a fix has never being easier!
+
+Of course, there is still some small fixes needed on this service, like [no way to retrigger a build](https://github.com/canonical-websites/build.snapcraft.io/issues/901) or some [issues on the badge status](https://github.com/canonical-websites/build.snapcraft.io/issues/902), but I'm sure those will be fixed once the service gets out of beta.
 
 # More polish
 
