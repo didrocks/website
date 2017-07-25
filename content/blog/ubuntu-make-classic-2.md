@@ -58,3 +58,10 @@ Ubuntu Make re-executes itself as root when required (and then, drop its privile
 A [small code modification](https://github.com/ubuntu/ubuntu-make/commit/8af76308dafa87fecb50d29d9dd51b5cd269fd0f) made us reexporting in that case *PATH*, *LD_LIBRARY_PATH* and *PYTHON\** env variables.
  
 With all this, Ubuntu Make worked like a charm as a snap on a blank 16.04 LTS machine. But as it’s a classic snap and we saw that those snaps need extra-caution, I wanted to test across other versions. Also, I wanted to continuously deliver our latest and greatest without manual intervention. We’ll see those two in the next and final chapter of this blog post serie.
+
+# Published parts:
+
+ * [Ubuntu Make as a classic snap: intro](https://didrocks.fr/2017/07/05/ubuntu-make-as-a-classic-snap-intro/)
+ * [Ubuntu Make as a classic snap: getting a 16.04 snap](https://didrocks.fr/2017/07/12/ubuntu-make-as-a-classic-snap-getting-a-16.04-snap/)
+ * ["Ubuntu Make as a classic snap: other distro versions and continuous delivery](https://didrocks.fr/2017/07/25/ubuntu-make-as-classic-snap-other-distros-and-CD/)
+
