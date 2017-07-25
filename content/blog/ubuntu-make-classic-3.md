@@ -79,4 +79,4 @@ I’m really glad we made this move to a classic Ubuntu Make snap, and you can s
 
  * [Ubuntu Make as a classic snap: intro](https://didrocks.fr/2017/07/05/ubuntu-make-as-a-classic-snap-intro/)
  * [Ubuntu Make as a classic snap: getting a 16.04 snap](https://didrocks.fr/2017/07/12/ubuntu-make-as-a-classic-snap-getting-a-16.04-snap/)
- * ["Ubuntu Make as a classic snap: other distro versions and continuous delivery](https://didrocks.fr/2017/07/25/ubuntu-make-as-classic-snap-other-distros-and-CD/)
+ * [Ubuntu Make as a classic snap: other distro versions and continuous delivery](https://didrocks.fr/2017/07/25/ubuntu-make-as-a-classic-snap-other-distro-versions-and-continuous-delivery/)
