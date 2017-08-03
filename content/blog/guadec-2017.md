@@ -24,7 +24,7 @@ or this:
 and even like this:
 ![Even more friendly](/images/guadec2017/friends3.jpg)
 
-(those images are from GUADEC 2012 in A Coruña, more info on [Alberto's blog post](https://siliconislandblog.wordpress.com/2))
+(those images are from GUADEC 2012 in A Coruña, more info on [Alberto's blog post](https://siliconislandblog.wordpress.com/2012/08/07/why-cant-we-be-friends/))
 
 In a nutshell, we felt really welcomed at this GUADEC, it's time to reunite! I want to particular thanks [Alberto Ruiz](https://siliconislandblog.wordpress.com) and [Allan Day](https://blogs.gnome.org/aday/) to have helped us and eased that. We even had a good round of applause during the [GNOME AGM](https://2017.guadec.org/talks-and-events/#abstract-100-gnome_foundation_agm_part_1) which was profoundly heartwarming. Nice to be part of this awesome community and family, moving forward and leave history behind us!
 
