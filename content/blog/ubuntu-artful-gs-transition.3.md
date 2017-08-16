@@ -4,7 +4,6 @@ date: 2017-08-16T11:00:25+02:00
 tags: [ "pu", "ubuntu" ]
 banner: "images/artful-shell-transition/wednesday-16-august-sound.png"
 type: "post"
-draft: true
 ---
 
 After introducing yesterday a real GNOME vanilla session, let's see how we are using this to implement small behavior differences and transforming current Ubuntu Artful. For more background on this, you can refer back to our decisions regarding our default session experience as [discussed in my blog post](/2017/08/03/ubuntu--guadec-2017-and-plans-for-gnome-shell-migration/).
