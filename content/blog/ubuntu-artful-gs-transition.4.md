@@ -1,10 +1,9 @@
 ---
 title: "Ubuntu GNOME Shell in Artful: Day 4"
-date: 2017-08-17T10:59:25+02:00
+date: 2017-08-17T10:35:25+02:00
 tags: [ "pu", "ubuntu" ]
 banner: "images/artful-shell-transition/thursday-17-august-unity-session.png"
 type: "post"
-draft: true
 ---
 
 Let's continue on our journey on transforming the current default session in Ubuntu Artful with a small change today. For more background on this, you can refer back to our decisions regarding our default session experience as [discussed in my blog post](/2017/08/03/ubuntu--guadec-2017-and-plans-for-gnome-shell-migration/).
