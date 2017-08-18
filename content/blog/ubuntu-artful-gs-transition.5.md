@@ -1,10 +1,9 @@
 ---
 title: "Ubuntu GNOME Shell in Artful: Day 5"
-date: 2017-08-18T11:00:25+02:00
+date: 2017-08-18T11:40:25+02:00
 tags: [ "pu", "ubuntu" ]
 banner: "images/artful-shell-transition/friday-18-august-default.png"
 type: "post"
-draft: true
 ---
 
 Big update today and probably a very awaited one: here is an important step on our journey on transforming the default session in Ubuntu Artful. Let's get the new Ubuntu Dock installed by default! For more background on this, you can refer back to our decisions regarding our default session experience as [discussed in my blog post](/2017/08/03/ubuntu--guadec-2017-and-plans-for-gnome-shell-migration/).
@@ -67,7 +66,7 @@ Also, as the extension is enabled in our GNOME Shell mode, it can't be easily di
 
 We disabled as well the hot corner in our ubuntu session, using the [patch proposed by Florian](https://bug688320.bugzilla-attachments.gnome.org/attachment.cgi?id=353430) (GNOME Shell upstream developer) discussed on [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=688320). The GNOME Shell overview is consequently only available by clicking on "Activities" (alongside regular keyboard shortcuts). Indeed, the hot corner isn't very compatible with a dock where you can aim for the first application item, miss it and trigger the hot corner by error. As usual, we only turned it off in the ubuntu session only with the same [default desktop override mechanism](http://bazaar.launchpad.net/~ubuntu-desktop/+junk/ubuntu-settings/revision/101).
 
-And related to this, and even even more important, what we didn't change.  As much as possible we want to stay compatible with the GNOME Shell current design:
+And related to this, and even more important, what we didn't change.  As much as possible we want to stay compatible with the GNOME Shell current design:
 * For instance, the application menu is kept at the bottom and not moved at the top of the dock. Indeed, the application menu isn't the BFB from the Unity world launching our "dash", with a bunch of collected search items and suggestions (applications, weather, wikipedia content…), but only a convenient shortcut to see "more applications" than there are in the dock. There was no need to deviate from the GNOME Shell design on this, and so, we didn't. In addition, it would be awkward to have "Activities", and then, the "Application menu" just below it, as it will make more difficult for people to understand the difference between the two entries.
 ![Activities and application menus aren't the same](/images/artful-shell-transition/friday-18-august-dock-activites.png)
 The application menu is a "show me more apps" for when you didn't pin or run the desired applications:
