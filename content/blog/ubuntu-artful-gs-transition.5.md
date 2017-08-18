@@ -105,6 +105,7 @@ The biggest part of introducing this dock is now done. Of course, artful is stil
 ## To conclude
 
 I really like [Kazhnuz](https://kazhnuz.space/) comment I read on this [OMGUbuntu blog post](http://www.omgubuntu.co.uk/2017/08/new-ubuntu-dock-first-look), it really follows how we see Ubuntu Dock compared to Dash to Dock:
+
 > The first thing to understand with Ubuntu-Dock is what it is.
 >
 > It's not a "better dock" to Dash-to-Dock, they didn't fork it because d-t-d wasn't "good enough" for Ubuntu. It doesn't aim to make you, medium or power-user want to change the dock you use. Dash-to-Dock will still be the "superior dock", with more features for you to use, and there will be tons of tutorial to explain how to use it instead of the default dock (and Ubuntu-dock auto-disable if Dash-to-Dock is enabled). If there is any new feature they want for their dock, it'll be certainly upstreamed in D-t-D.
