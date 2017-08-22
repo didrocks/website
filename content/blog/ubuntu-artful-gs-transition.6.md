@@ -6,7 +6,7 @@ banner: "images/artful-shell-transition/friday-18-august-default.png"
 type: "post"
 ---
 
-Today's change is hopefully an unnoticeale change for most of you, but gives better security, a smoother and great experience on our journey on transforming the default session in Ubuntu Artful. For more background on this, you can refer back to our decisions regarding our default session experience as [discussed in my blog post](/2017/08/03/ubuntu--guadec-2017-and-plans-for-gnome-shell-migration/).
+Today's change is hopefully an unnoticeable change for most of you, but gives better security, a smoother and great experience on our journey on transforming the default session in Ubuntu Artful. For more background on this, you can refer back to our decisions regarding our default session experience as [discussed in my blog post](/2017/08/03/ubuntu--guadec-2017-and-plans-for-gnome-shell-migration/).
 
 # Day 6: Wayland is live on Ubuntu by default!
 
