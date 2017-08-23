@@ -1,10 +1,9 @@
 ---
 title: "Ubuntu GNOME Shell in Artful: Day 7"
-date: 2017-08-23T11:15:25+02:00
+date: 2017-08-23T09:24:25+02:00
 tags: [ "pu", "ubuntu" ]
 banner: "images/artful-shell-transition/keylock-indicator.png"
 type: "post"
-draft: true
 ---
 
 
