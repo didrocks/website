@@ -27,7 +27,7 @@ Note we are not totally decided on it yet, as there is a counter proposal while 
 
 ![We should have done a poll to compare the two proposals popularity](/images/artful-shell-transition/another_proposal_for_ubuntu_theme.png)
 
-Those themes are only compatible for Ambiance right now, and are based on GNOME Shell 2.24. We will rebase it on 2.26 once uploaded to the distribution (probably on 3.25.91).
+Those themes are only compatible for Ambiance right now, and are based on GNOME Shell 3.24. We will rebase it on 2.26 once uploaded to the distribution (probably on 3.25.91).
 
 We also got a bunch of other [bug fixes around the GTK theme itself and many design discussions](https://trello.com/c/Cpt4wwRw/204-london-fit-and-finish-hackfest) around various Shell desired behaviors. As you can see, the list was quite large!
 
