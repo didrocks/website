@@ -11,7 +11,7 @@ A very visual update today on our new Artful default session! This one is, as pr
 
 # Day 9: Uploading new theme changes
 
-As I reported a little bit more than a week ago, the [Fit and Finish Sprint](/2017/08/25/ubuntu-gnome-shell-in-artful-day-8/) went well and we have tackle some important areas of changes. You can see a summary in our [trello board](https://trello.com/c/Cpt4wwRw/204-london-fit-and-finish-hackfest) that a lot happened already. [Martin](https://twitter.com/flexiondotorg) is reviewing and merging some fixes on our GTK ambiance and radiance themes (but no big visual updates, just small refinements and performance fixes). This task is still ongoing. I'll focus here on the Shell theme changes that [are now available](https://launchpad.net/ubuntu/+source/gnome-shell/3.25.91-0ubuntu3). Here is our the new default theme:
+As I reported a little bit more than a week ago, the [Fit and Finish Sprint](/2017/08/25/ubuntu-gnome-shell-in-artful-day-8/) went well and we have tackle some important areas of changes. You can see a summary in our [trello board](https://trello.com/c/Cpt4wwRw/204-london-fit-and-finish-hackfest) that a lot happened already. [Martin](https://twitter.com/m_wimpress) is reviewing and merging some fixes on our GTK ambiance and radiance themes (but no big visual updates, just small refinements and performance fixes). This task is still ongoing. I'll focus here on the Shell theme changes that [are now available](https://launchpad.net/ubuntu/+source/gnome-shell/3.25.91-0ubuntu3). Here is our the new default theme:
 
 ![Ubuntu Artful 17.10 default Shell theme](/images/artful-shell-transition/new-theme-main-view.png)
 
