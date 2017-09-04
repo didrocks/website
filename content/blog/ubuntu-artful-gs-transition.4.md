@@ -1,7 +1,7 @@
 ---
 title: "Ubuntu GNOME Shell in Artful: Day 4"
 date: 2017-08-17T10:35:25+02:00
-tags: [ "pu", "ubuntu" ]
+tags: [ "pu", "ubuntu", "gnome" ]
 banner: "images/artful-shell-transition/thursday-17-august-unity-session.png"
 type: "post"
 ---

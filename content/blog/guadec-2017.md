@@ -1,7 +1,7 @@
 ---
 title: "Ubuntu @ GUADEC 2017 and plans for GNOME Shell migration"
 date: 2017-08-03T09:33:03+02:00
-tags: [ "pu", "ubuntu" ]
+tags: [ "pu", "ubuntu", "gnome" ]
 banner: "images/guadec2017/group.jpg"
 type: "post"
 ---

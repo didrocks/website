@@ -1,7 +1,7 @@
 +++
 title = "Some unity configuration in gnome-control-center."
 date = "2012-01-26T11:10:00+01:00"
-tags = [ "devel", "libre", "PU", "ubuntu", "unity" ]
+tags = [ "devel", "libre", "PU", "ubuntu", "unity", "gnome" ]
 aliases = ["/post/Some-unity-configuration-in-gnome-control-center."]
 +++
     <p>Just finished some hacking for implementing some unity configuration options that are blessed by the design team, as shown in this <a href="https://docs.google.com/document/d/1ILTJDiDCd25Npt2AmgzF8aOnZZECxTfM0hvsbWT2BxA/edit?hl=en_US#heading=h.kijjueu5tjdf">official specification</a>.</p>

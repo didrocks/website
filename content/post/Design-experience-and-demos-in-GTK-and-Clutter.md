@@ -1,6 +1,7 @@
 +++
 title = "Design experience and demos in GTK and Clutter"
 date = "2009-08-25T08:10:00+02:00"
+tags = [ "gnome" ]
 aliases = ["/post/Design-experience-and-demos-in-GTK-and-Clutter"]
 +++
     <p>Well, coming back from vacation, I had a couple of hours to "kill" in the train.</p>
