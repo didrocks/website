@@ -4,7 +4,6 @@ date: 2017-09-11T16:00:25+01:00
 tags: [ "pu", "ubuntu", "gnome" ]
 banner: "images/artful-shell-transition/gdm-upstream.png"
 type: "post"
-draft: true
 ---
 
 Let's talk today about collaboration (with [System76](https://system76.com) in this case) and how we give more benefits to both Ubuntu and the upcoming [Pop! OS](https://system76.com/pop) user base. For more background on our current transition to GNOME Shell in artful, you can refer back to our decisions regarding our default session experience as [discussed in my blog post](/2017/08/03/ubuntu--guadec-2017-and-plans-for-gnome-shell-migration/).
