@@ -1,10 +1,9 @@
 ---
 title: "Ubuntu GNOME Shell in Artful: Day 12"
-date: 2017-09-14T12:00:25+01:00
+date: 2017-09-14T11:25:25+01:00
 tags: [ "pu", "ubuntu", "gnome" ]
 banner: "images/artful-shell-transition/alt-tab-application-multiple-windows.png"
 type: "post"
-draft: true
 ---
 
 We'll focus today on our advanced user base. We, of course, try to keep our default user experience as comprehensible as possible for the wider public, but we want as well to think about our more technical users by fine tuning the experience… and all of this, obviously, while changing our default session to use GNOME Shell. For more background on our current transition to GNOME Shell in artful, you can refer back to our decisions regarding our default session experience as [discussed in my blog post](/2017/08/03/ubuntu--guadec-2017-and-plans-for-gnome-shell-migration/).
