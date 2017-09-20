@@ -4,7 +4,6 @@ date: 2017-09-20T12:25:25+01:00
 tags: [ "pu", "ubuntu", "gnome" ]
 banner: "images/artful-shell-transition/dock-dynamic-transparency.png"
 type: "post"
-draft: true
 ---
 
 Now that GNOME 3.26 is released, available in Ubuntu artful, and final GNOME Shell UI is confirmed, it's time to adapt our default user experience to it. Let's discuss how we worked with dash to dock upstream on the transparency feature. For more background on our current transition to GNOME Shell in artful, you can refer back to our decisions regarding our default session experience as [discussed in my blog post](/2017/08/03/ubuntu--guadec-2017-and-plans-for-gnome-shell-migration/).
