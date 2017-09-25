@@ -1,6 +1,6 @@
 ---
 title: "Ubuntu GNOME Shell in Artful: Day 14"
-date: 2017-09-25T15:25:25-05:00
+date: 2017-09-25T16:35:25-05:00
 tags: [ "pu", "ubuntu", "gnome" ]
 banner: "images/artful-shell-transition/ubuntu-dock-count.png"
 type: "post"
