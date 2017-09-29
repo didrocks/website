@@ -1,11 +1,10 @@
 ---
-title: "Test blog post"
-date: 2017-09-26T14:21:21-04:00
+title: "Another test blog post"
+date: 2017-09-28T14:21:21-04:00
 tags: []
 banner: "images/artful-shell-transition/ubuntu-dock-count.png"
 type: "post"
 discourse: true
-draft: true
 ---
 
 
