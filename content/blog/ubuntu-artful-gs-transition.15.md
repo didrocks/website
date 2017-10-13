@@ -1,10 +1,11 @@
 ---
 title: "Ubuntu GNOME Shell in Artful: Day 15"
 date: 2017-10-12T11:35:25-05:00
-tags: []
+tags: [ "pu", "ubuntu", "gnome" ]
 banner: "images/artful-shell-transition/final_freeze_ubuntu_17.04_desktop.png"
 type: "post"
 discourse: true
+draft: true
 ---
 
 Since the [Ubuntu Rally](https://insights.ubuntu.com/2017/09/01/ubuntu-rally-in-nyc/) in New York, the Ubuntu desktop team is full speed ahead on the latest improvements we can make to our 17.10 Ubuntu release, Artful Aardvark. Yesterday was our [Final Freeze](https://wiki.ubuntu.com/ArtfulAardvark/ReleaseSchedule) and I think it's a good time to reflect some of the changes and fixes that happened during the rally and the following weeks. This list isn't exhaustive at all, of course, and only cover partially changes in our default desktop session, featuring GNOME Shell by default. For more background on our current transition to GNOME Shell in artful, you can refer back to our decisions regarding our default session experience as [discussed in my blog post](/2017/08/03/ubuntu--guadec-2017-and-plans-for-gnome-shell-migration/).
