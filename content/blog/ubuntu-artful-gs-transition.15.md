@@ -93,6 +93,8 @@ We weren't impacted by this bug previously as when we introduced this in Unity, 
 
 When looking at this at the sprint, I decided that it could be a nice place for the community to comment on those blog posts rather than creating another silo here. Indeed, the current series of blog post have more than 600 comments, I tried to be responsive on most of them requiring some answers, but I can't obviously scale. Thanks to some of the community who already took the time to reply to already answered questions there! However, I think our community hub is a better place for those kind of interactions and you should see below, an automated created topic on the [Desktop section of the hub](https://community.ubuntu.com/c/desktop) corresponding to this blog post (if all goes well. Of course… it worked when we tested it ;)). This is read-only, embedded version and clicking on it should direct you to the corresponding topic on the discourse instance where you can contribute and exchange. I really hope that can foster even more participation inside the community and motivate new contributors!
 
+(edit: seems like there is still some random issues on topic creation, for the time being, I created a topic manually and [you can comment on here](https://community.ubuntu.com/t/ubuntu-gnome-shell-in-artful-day-15/662))
+
 ## Other highlights
 
 We got some multi-monitor fixes, HiDPI enhancements, indicator extension improvements and many others… Part of the team worked with [Jonas](https://github.com/jadahl) from Red Hat on mutter and Wayland on scaling factor. It was a real pleasure to meet him and to have him tagging along during the evenings and our numerous walks throughout Manhattan as well! It was an excellent sprint followed by nice follow-up weeks.
@@ -104,3 +106,5 @@ If you want to get a little bit of taste of what happened during the Ubuntu Rall
 As usual, if you are eager to experiment with these changes before they migrate to the artful release pocket, you can head over to [our official Ubuntu desktop team transitions ppa](https://launchpad.net/~ubuntu-desktop/+archive/ubuntu/transitions) to get a taste of what's cooking!
 
 Now, it's almost time to release 17.10 (few days ahead!), but I will probably blog about the upgrade experience in my next and last - for this cycle - report on our Ubuntu GNOME Shell transition!
+
+Edit: As told before, feel free to comment on [our community HUB](https://community.ubuntu.com/t/ubuntu-gnome-shell-in-artful-day-15/662) as the integration below doesn't work for now.
