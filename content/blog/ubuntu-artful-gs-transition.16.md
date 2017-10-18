@@ -13,7 +13,7 @@ All good things must come to an end, however, in that particular case, it's rath
 
 ## Different kind of sessions
 
-Any new Ubuntu installation will have two sessions available at most, whose basename is "Ubuntu": 
+Any new Ubuntu installation will have two sessions available at most, whose base name is "Ubuntu":
 
 * The "Ubuntu" session corresponds to GNOME Shell experience with our modifications (Ubuntu Dock, appindicator support, our theme, small behavior changes…). You have probably seen those and followed their development on previous blog posts. This is the default session running under Wayland.
 * The "Ubuntu on Xorg" session, being similar to the previous one, but running on Xorg as the name indicates :) Users who can't run Wayland (using nvidia proprietary driver or unsupported hardware) should be automatically fallbacked and only presented with that session.
@@ -34,7 +34,7 @@ People running today Ubuntu 17.04 or our last LTS, Ubuntu 16.04, are generally u
 
 ![Ubuntu GNOME Shell on 17.10](/images/artful-shell-transition/final_freeze_ubuntu_17.10_desktop.png)
 
-However, we don't remove packages that are still available in the distribution on upgrades. Those users will thus have an additional "**Unity**" session option, which they can use to continue running Unity 7 (and thus, on Xorg only). Indeed, Unity is still present, in universe (meaning we don't commit to strong maintenance or security updates), but we will continue to have a look at it on a best effort bases (at least until our next LTS). Some features are slightly modified to either don't collide with GNOME Shell experience or to follow more the upstream philosophy, like the headerbars I mentioned in [my previous blog post](/2017/10/16/ubuntu-gnome-shell-in-artful-day-15/). In a nutshell, don't expect the exact same experience that you used to have, but you will reach similar familarity for the main concepts and components.
+However, we don't remove packages that are still available in the distribution on upgrades. Those users will thus have an additional "**Unity**" session option, which they can use to continue running Unity 7 (and thus, on Xorg only). Indeed, Unity is still present, in universe (meaning we don't commit to strong maintenance or security updates), but we will continue to have a look at it on a best effort bases (at least until our next LTS). Some features are slightly modified to either don't collide with GNOME Shell experience or to follow more the upstream philosophy, like the headerbars I mentioned in [my previous blog post](/2017/10/16/ubuntu-gnome-shell-in-artful-day-15/). In a nutshell, don't expect the exact same experience that you used to have, but you will reach similar familiarity for the main concepts and components.
 
 ![Unity on 17.10](/images/artful-shell-transition/unity-17.10.png)
 
