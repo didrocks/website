@@ -61,8 +61,8 @@ To sum all that up:
 
 And this is it for our "road to Artful" blog post long series! I hope you had as much fun reading it as I had writing and detailing the work done by the Ubuntu desktop team to make this transition, we hope, a success. It was really great as well to be able to interact and answers to the many comments that you posted on the dedicated section. Thanks to everyone participating there.
 
-You can comment on the [community HUB]() and participate and contribute from there! We will likely redo the same experiment and keep you posted on our technical advancement for the Ubuntu 18.04 LTS release. You should expect fewer posts as of course as the changes shouldn't be so drastic as they were this cycle. We will mostly focus on stabilizing, bug fixes and general polish!
+You can comment on the [community HUB](https://community.ubuntu.com/t/ubuntu-gnome-in-artful-day-16/790) and participate and contribute from there! We will likely redo the same experiment and keep you posted on our technical advancement for the Ubuntu 18.04 LTS release. You should expect fewer posts as of course as the changes shouldn't be so drastic as they were this cycle. We will mostly focus on stabilizing, bug fixes and general polish!
 
-Until then, enjoy the upcoming Ubuntu 17.10 release, watch the [ubuntu.com website](https://www.ubuntu.com/) for the release announcement on desktop, servers iot and clouds, [join our community HUB](https://community.ubuntu.com/)… and see you soon around! :)
+Until then, enjoy the upcoming Ubuntu 17.10 release, watch the [ubuntu.com website](https://www.ubuntu.com/) for the release announcement on desktop, servers, flavors, iot and clouds, [join our community HUB](https://community.ubuntu.com/)… and see you soon around! :)
 
 Didier
