@@ -30,6 +30,8 @@
            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
         })();
     </script>
+    {{ else if (.Params.manualdiscourse) }}
+    Participate and be part on your discussion on <a href="{{ .Params.manualdiscourse }}">our Community HUB dedicated topic</a>!<br />(The preview isn't availabel yet and will soon be fixed by our IS team).
     {{ else }}
     <div id="disqus_thread">
         {{ template "_internal/disqus.html" . }}
