@@ -39,7 +39,25 @@ Consequently, those are the detailed information for users to understand why thi
 
 Now that I've said what I wanted to tell about my view on the upstream changes, and before detailing what we are going to do for Ubuntu 18.04 LTS, let me introduce you Nautilus upstream maintainer already many times mentioned: [Carlos Soriano](https://csorianognome.wordpress.com).
 
-<<STAGE IS YOURS Carlos!>>
+Hello Ubuntu and GNOME community,
+
+Thanks Didier for the detailed explanation and giving me a place in your blog!
+
+I'm writting here because I wanted to clarify some details in the interaction with downstreams, in this case Ubuntu and Canonical developers. When I wrote the blog post with all the details I explained only the part that purely refers to upstream Nautilus. And that was actually quite well received. However, two weeks after my blog post some websites explained the change in a not very good way (the clickbait magic).
+
+Usually that is not very important, those who want factual information know that we are in IRC all the time and that we usually write blog posts about upcoming changes in our blog agregation at [Planet GNOME](https://planet.gnome.org) or here in Didier's blog for Ubuntu. This time though, some people in our closer communities (both GNOME and Ubuntu) got splashed with missconceptions, and I wanted to address that, and what better than to do it with Didier :)
+
+One missconception was that Ubuntu and Canonical were 'yet again' using older version of software just because. Well maybe you are surprised now, **my recommendation for Ubuntu and Canonical was to actually stay in Nautilus 3.26**. Seriously, with a LTS version coming that is by far the most reasonable option. While for a regular user the upstream recommendation is to try out nemo-desktop (btw another missconception, we said nemo-desktop, not Nemo the app, for a user those are in practice two different things), for a distribution that needs to support and maintain all kind of random requests and stability promises for years, staying with a single code that they already worked with is the best option.
+
+Another missconception I saw these days is that seems we take decisions in a rush. In short, I became Nautilus maintainer 3 years and 4 months ago. **Exactly 3 years and one month ago I realized that we need to remove that part from Nautilus**. It has been quite hard to reason within myself during these 3 years that an option that upstream was not considered the experience we wanted to provide was holding most of the major works on Nautilus, including making away contributions from new contributors given the poor state that part impacted the whole code. In all this time, dowstream like Ubuntu were a major part of me holding this code.
+
+And the last missconception was that it looks like GNOME devs and Ubuntu devs are in completely separate nichos where noone communicates with each other. While we are usually focused on our personal tasks, when a change is going to happen we communicate. In this case, **I reached out to the desktop team at Canonical before taking the final step** providing a draft of the blog post to check out the impact given the possible options for the LTS release of Ubuntu.
+
+In summary, the take out from here is that while we might have slighly different visions, at the end of the day we just want to provide the best experience to the users, and for that believe me we do the best we can.
+
+In case you have any question you can always reach out to us Nautilus upstream in #nautilus IRC channel at irc.gnome.org or in our [mailing list](https://mail.gnome.org/mailman/listinfo/nautilus-list).
+
+Hope you enjoy this read, and hopefully we will have the benefits of this work to show soon. Thanks again Didier!
 
 ## What does this mean for Ubuntu?
 
