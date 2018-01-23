@@ -4,7 +4,6 @@ date: 2018-01-23T10:36:19+01:00
 tags: [ "pu", "ubuntu", "gnome" ]
 banner: "/images/bionic-age/no-desktop-icons.png"
 type: "post"
-draft: true
 manualdiscourse: "https://community.ubuntu.com/t/files-nautilus-v3-28-will-lose-the-desktop-icons-capability/3115"
 ---
 
