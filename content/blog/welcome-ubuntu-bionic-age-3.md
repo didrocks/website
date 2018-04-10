@@ -111,6 +111,8 @@ Those parts (session file and gsettings overrides) aren't supported in the snap 
 
 The session is thus installed by default on your 18.04 system, but only reveals (thanks to `TryExec`) once you install the snap! Due to all this, the snap will consequently only work on 18.04 LTS as we need those changes in the distribution and some of them are tailored to Communitheme. We hope to generalize those patches in the future.
 
+Note that GTK2 applications aren't themed yet in the snap, we are working on this (you can follow [this bug](https://github.com/ubuntu/gtk-communitheme/issues/322) if this is of interest to you).
+
 ## Other technical details
 
 The Travis CI integration is easy to grasp: all projects have the same [.travis.yml](https://github.com/ubuntu/communitheme-snap-helpers/blob/master/.travis.yml) file, which downloads during build [the CI script](https://github.com/ubuntu/communitheme-snap-helpers/blob/master/build/prepare-build-snap) to ease maintenance. This one is downloading the [snapcraft.yaml](https://github.com/ubuntu/communitheme-snap-helpers/blob/master/snap/snapcraft.yaml) file centralized as well for maintenance ease. It pulls changes for every source from every component part from latest master, but it modifies the source for the current component to point to the local branch (master or PR branch), and then build using the official snapcraft Docker container a snap. It then decides to push the built snap in master or PR case and release in the appropriate channel.
