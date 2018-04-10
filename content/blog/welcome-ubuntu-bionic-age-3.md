@@ -1,10 +1,9 @@
 ---
 title: "Welcome To The (Ubuntu) Bionic Age: New WIP ubuntu theme as a snap"
-date: 2018-04-10T10:36:19+01:00
+date: 2018-04-10T10:49:19+01:00
 tags: [ "pu", "ubuntu", "gnome" ]
 banner: "/images/bionic-age/ubuntu-communitheme-desktop.png"
 type: "post"
-draft: true
 manualdiscourse: "https://community.ubuntu.com/t/call-for-participation-an-ubuntu-default-theme-lead-by-the-community/1545"
 ---
 
@@ -41,7 +40,7 @@ We were slowly, approaching [UI Freeze](https://wiki.ubuntu.com/BionicBeaver/Rel
  * There are already some big changes during ubuntu 16.04 LTS (xenial) to ubuntu 18.04 LTS (bionic) upgrade. The most noticeable one being the change from Unity to GNOME Shell as a default desktop environment. This means that we need to ensure people have some kind of familiarity and that they can find themselves at home after the upgrade. We need to ease the transition so that those changes aren't seen as too drastic. The look and feel of the Shell and applications are obviously a great part of recognizable landmarks.
  * There were (and still!) a lot of changes coming up to Communitheme (which is a good thing!). If you look at the number of [commits](https://github.com/ubuntu/gtk-communitheme/commits/master), worked on [issues](https://github.com/ubuntu/gtk-communitheme/issues?utf8=%E2%9C%93&q=is%3Aissue+), [pull requests](https://github.com/ubuntu/gtk-communitheme/issues?utf8=%E2%9C%93&q=is%3Aissue+) alone on the GTK theme project (which is the most active one), you will see a lot of positive exchanges on them. It's even hard for me to keep the pace only lurking at them! However, once [UI Freeze](https://wiki.ubuntu.com/UserInterfaceFreeze) is set, it means the theme is set in stone, and no visible changes can easily enter the distribution. It means in general, no more refinement, no visible element or color changes for the next 5 years of support in 18.04 LTS. Basically, setting Communitheme as a default for bionic would have frozen the pace of changes going into it. At the time, a lot of heated discussions were still happening on the [main thread](https://community.ubuntu.com/t/call-for-participation-an-ubuntu-default-theme-lead-by-the-community/1545) and it didn't seem reasonable to freeze main concepts in the theme. If you are interesting, those were at discussion ~#600 (over the +#800 there currently is ;)).
  * The GTK2 and Qt theming isn't on par with the GTK3 one yet, leaving some applications looking drastically different than others.
- * As some active Communitheme members were telling, there is still a lot to be done and important bug reports to be dealt with. Also, we need more applications to be tested. For instance, at the time around UI Freeze, we just went through and understood completely the GTK2 issues that some people had. We [had fixed recently](https://github.com/Ubuntu/gnome-shell-communitheme/issues/6132) why some people got unstyled GTK2 applications. A similar story for stylable Ubuntu Dock/Dash to dock also happened. This is to totally normal, and those bugs (with new ones discovered everyday) are part of creating a theme. Applications are using the toolkits and styles in very subtle ways, and you need to try to not make the whole theme unmaintainable on the long term with too many application-specific code. 
+ * As some active Communitheme members were telling, there is still a lot to be done and important bug reports to be dealt with. Also, we need more applications to be tested. For instance, at the time around UI Freeze, we just went through and understood completely the GTK2 issues that some people had. We [had fixed recently](https://github.com/Ubuntu/gnome-shell-communitheme/issues/61) why some people got unstyled GTK2 applications. A similar story for stylable Ubuntu Dock/Dash to dock also happened. This is to totally normal, and those bugs (with new ones discovered everyday) are part of creating a theme. Applications are using the toolkits and styles in very subtle ways, and you need to try to not make the whole theme unmaintainable on the long term with too many application-specific code.
 
 For all those reasons, is wasn't reasonable to decide to ship Communitheme as a default theme for 18.04 LTS and thus the decision was taken. To ensure we didn't get a stalled theme, we provided some Ambiance (current default theme) [enhancements and fixes](https://community.ubuntu.com/t/ambiance-gnome-theme-bugbears-and-what-can-be-done-about-them/1637), some of them coming by popular request from [Ambiance-rw](https://www.gnome-look.org/p/1197991/) itself where we worked with the upstream contributor!
 
@@ -87,9 +86,9 @@ Another interesting thing that the snap brings to us is auto-refreshing of the t
 
 While working on this CI build, thanks to the branch support in snap store, it is now really easy to test incoming changes before they are even merged into master!
 
-For every pull request on any Communitheme related project, a comment is automatically generated [like here](XXXXXXXXXXXXXXXXXXXX LINK needed). You will be able to read this once the snap is created:
+For every pull request on any Communitheme related project, a comment is automatically generated [like in that example](https://github.com/ubuntu/cursor-communitheme/pull/1). You will be able to read this once the snap is created:
 
-> A new test snap version is available using: `snap refresh communitheme --channel=gnome-shell-communitheme-pr13`.
+> A new test snap version is available using: `snap refresh communitheme --channel=edge/gnome-shell-communitheme-pr42`.
 > Further available updates will track that pull request then.
 >
 > Switch back to stable or edge snap with `snap refresh communitheme --stable` or `snap refresh communitheme --edge` once you are done with it!
