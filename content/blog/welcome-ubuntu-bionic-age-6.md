@@ -11,7 +11,7 @@ manualdiscourse: "https://community.ubuntu.com/t/call-for-participation-an-ubunt
 
 As discussed last week when [unveiling the communitheme snap](/2018/04/10/welcome-to-the-ubuntu-bionic-age-new-wip-ubuntu-theme-as-a-snap/) for ubuntu 18.04 LTS, here is a suite of interview this week on some members of the core contributor team shaping this entirely community-driven theme.
 
-Today is the turn of Carlo, c-lobrano on the [community hub](https://community.ubuntu.com/).
+Today is the turn of Mads, madsrh on the [community hub](https://community.ubuntu.com/).
 
 ## Who are you? What are you doing/where are you working? Give us some words and background about you!
 
