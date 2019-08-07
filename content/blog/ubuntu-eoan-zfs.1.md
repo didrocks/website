@@ -72,4 +72,4 @@ As you can see, the future of ZFS as root on Ubuntu is bright. We still have a l
 
 More blog posts will follow to shed more light on these enhancements, and report as to our status.
 
-Join the discussion via [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/enhancing-our-zfs-support-on-ubuntu-19-10-an-introduction/12130).
+Join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/enhancing-our-zfs-support-on-ubuntu-19-10-an-introduction/12130).
