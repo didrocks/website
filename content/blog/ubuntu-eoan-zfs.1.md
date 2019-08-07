@@ -4,8 +4,7 @@ date: 2019-08-06T09:36:19+02:00
 tags: [ "pu", "ubuntu" ]
 banner: "/images/zsys/zol-logo.png"
 type: "post"
-draft: true
-manualdiscourse: "TODO"
+manualdiscourse: "https://discourse.ubuntu.com/t/enhancing-our-zfs-support-on-ubuntu-19-10-an-introduction/12130"
 ---
 
 # Enhancing our ZFS support on Ubuntu 19.10 - an introduction
@@ -55,17 +54,17 @@ Finally, we want to provide some best practices in terms of the ZFS dataset layo
 
 For this, we are developing a new user space daemon, named [zsys](https://github.com/ubuntu/zsys). This will cooperate with GRUB (but is not limited to it) and ZFS on Linux initramfs to give advanced features we'll describe later on. Our goal is to upstream as much as possible to GRUB and zol project maintainers when things are solid enough.
 
-The whole current progress and what's up next is accessible via our public card project against the Ubuntu GitHub organisation [via this link](https://github.com/orgs/ubuntu/projects/1).
+For this, we are developing a new user space daemon, named [zsys](https://github.com/ubuntu/zsys). This one cooperate
+with grub (but is not limited to it) and ZFS on Linux initramfs to give advanced features we'll describe later on. Our goal is to upstream to grub and ZOL project maintainers as much as possible when things are proved to be solid enough...
 
+The whole current progress and what's up next is accessible via our public card project against the Ubuntu GitHub organisation [via this link](https://github.com/orgs/ubuntu/projects/1).
 
 ## We didn't do it alone
 
 Thanks to early press coverage, we got in touch with Richard Laager who maintains [the upstream HOWTO on root on ZFS for Ubuntu](https://github.com/zfsonlinux/zfs/wiki/Ubuntu-18.04-Root-on-ZFS). After some back and forth on the draft specification, we came to some good conclusions and he slightly modified the HOWTO to be more compatible with our plans.
 
-Similarly, [Marcin Skadetailrbek](https://github.com/mskarbek) got in touch as well and wants to bring ZSYS to Fedora However, some adjustments will be needed, making this is a longer-term project.
-
-Both have been commenting and contributing on a specification (Work In Progress) that we wrote and a copy is [accessible here](https://docs.google.com/document/d/1m9VWOjfmdbujV4AQWzWruiXYgb0W4Hu0D8uQC_BWKjk) for those who want to see what's cooking in the longer term plan. Thanks to them for their very useful input!
-
+Similarly, [Marcin Skadetailrbek](https://github.com/mskarbek) got in touch as well and wants to bring ZSYS to Fedora (but some adjustments will be needed,
+making this is a longer-term project).
 
 ## More work ahead
 
@@ -73,5 +72,4 @@ As you can see, the future of ZFS as root on Ubuntu is bright. We still have a l
 
 More blog posts will follow to shed more light on these enhancements, and report as to our status.
 
-Join the discussion via dedicated Ubuntu discourse thread: TODO.
-
+Join the discussion via [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/enhancing-our-zfs-support-on-ubuntu-19-10-an-introduction/12130).
