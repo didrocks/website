@@ -2,7 +2,7 @@
 title: "Ubuntu ZFS support in 19.10: ZFS on root"
 date: 2019-10-11T09:36:19+02:00
 tags: [ "pu", "ubuntu", ]
-banner: "/images/zsys/zol-logo.png"
+banner: "/images/zsys/eoan-installer-choice.png"
 type: "post"
 draft: true
 manualdiscourse: "https://discourse.ubuntu.com/t/enhancing-our-zfs-support-on-ubuntu-19-10-an-introduction/12130"
@@ -28,19 +28,20 @@ With that being said, what does ZFS on root means? It means that most of your sy
 
 Ready to jump in, despite all those disclaimers? If so, you download an ubuntu 19.10 ISO, you will see that the partionner screen in ubiquity has an additional option (please read the **Warning**!):
 
-IMAGE of Ubiquity install screen
+![ZFS option at the format screen](/images/zsys/eoan-installer-choice.png)
 
 Yes, the current **experimental** support is limited right now to a whole disk installation. If you have multiple disks, the next screen will propose you to pick which one:
 
-IMAGE optional multi-disk selection.
+![if more than one disk is available, choose which one you will pick](/images/zsys/eoan-installer-disk-choice.png)
+
 
 You will then get the "please confirm we'll reformat your whole disk" screen.
 
-IMAGE of REFORMAT disk
+![still some quirks to iron out, like formatting confirmation page](/images/zsys/eoan-warning-erase-disk.png)
 
 … and finally the installation proceed as usual:
 
-IMAGE of INSTALLING.
+![installation in progress](/images/zsys/eoan-installer-installing.png)
 
 In case you didn't notice yet, this is **experimental** (what? ;)) and we have some known quirks, like the [confirmation screen](https://bugs.launchpad.net/ubuntu/+source/ubiquity/+bug/1847719) showing that it's going to format and create an ext4 partition. This is difficult to fix for ubuntu 19.10 (for the technical users interested in details, what we are actually doing is creating multiple partitions to let partman handling the ESP, and then, overwrite the ext4 partition with ZFS, so it’s technically not lying ;)). It’s something we will fix before getting out of the **experimental** phase, hopefully next cycle.
 
@@ -76,7 +77,7 @@ But this is far from being the end of our road to our enhance ZFS support in ubu
 
 However, as we first wanted to have feedback in Ubuntu 19.10 about pure ZFS systems, we didn't seed it by default. It's available though an `apt install zsys` away for those adventurous audience, and some ubuntu flavors even already jumped into the bang wagon where it will be installed by default! Even if you won't immediately see differences, this will unleash some of our grub, adduser and initramfs integration that are baked right in 19.10.
 
-The excellent [Ars Technica](https://arstechnica.com/information-technology/2019/10/a-detailed-look-at-ubuntus-new-experimental-zfs-installer/) review by [Jim Salter](https://twitter.com/jrssnet) was wondering about the quite complex dataset layout we are setting up. We'll sed some lights on this on the next blog post which will explain what Zsys is really, what it does bring to the table and what our future plans are.
+The excellent [Ars Technica](https://arstechnica.com/information-technology/2019/10/a-detailed-look-at-ubuntus-new-experimental-zfs-installer/) review by [Jim Salter](https://twitter.com/jrssnet) was wondering about the quite complex dataset layout we are setting up. We'll shed some lights on this on the next blog post which will explain what Zsys is really, what it does bring to the table and what our future plans are.
 
 The future of ZFS on root on ubuntu is bright, I'm personally really excited about what this is going to bring in a short future to both server and desktop users! (and yes, we can cook some very nice features for our desktop user using ZFS)!
 
