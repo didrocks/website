@@ -22,7 +22,7 @@ Any existing ZFS on root user will automatically get those benefits as soon as t
 
 ## Installer integration
 
-The ubiquity installer is providing now an **experimental** option for setting up ZFS on root on your system. This is alpha and people opting in should be conscious about it. It's not advised to run this on production system or system you have critical data on (apart if you have regular and verified backups, which we all do, correct?). To be fully clear, there may be breaking changes in the design as long as the feature is experimental, and we may, or may not, provide transition path to the next layout.
+The ubiquity installer is providing now an **experimental** option for setting up ZFS on root on your system. While ZFS is quite a mature product for a long time, the installer ZFS support option is is alpha and people opting in should be conscious about it. It's not advised to run this on production system or system you have critical data on (apart if you have regular and verified backups, which we all do, correct?). To be fully clear, there may be breaking changes in the design as long as the feature is experimental, and we may, or may not, provide transition path to the next layout.
 
 With that being said, what does ZFS on root means? It means that most of your system will run on ZFS. Basically even your "/" directory, is installed on ZFS.
 
