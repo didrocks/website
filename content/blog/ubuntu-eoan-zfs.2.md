@@ -10,7 +10,7 @@ manualdiscourse: "https://discourse.ubuntu.com/t/enhancing-our-zfs-support-on-ub
 
 # ZFS on root
 
-This is part 2 of our blog post series on our current and future work around ZFS on root support in ubuntu. If you didn't yet read the [introductionary post](/2019/08/06/ubuntu-zfs-support-in-19.10-introduction/), I strongly recommend you to do this first!
+This is part 2 of our blog post series on our current and future work around ZFS on root support in ubuntu. If you didn't yet read the [introductory post](/2019/08/06/ubuntu-zfs-support-in-19.10-introduction/), I strongly recommend you to do this first!
 
 Here we are going to discuss what landed by default ubuntu 19.10.
 
