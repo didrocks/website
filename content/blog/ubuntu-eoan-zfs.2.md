@@ -14,9 +14,11 @@ This is part 2 of our blog post series on our current and future work around ZFS
 
 Here we are going to discuss what landed by default ubuntu 19.10.
 
-## Upstream Zfs On Linux
+## Upstream ZFS On Linux
 
 We are shipping [ZFS On Linux version 0.8.1](https://launchpad.net/ubuntu/eoan/+source/zfs-linux), with features like native encryption, trimming support, checkpoints, raw encrypted zfs transmissions, project accounting and quota and a lot of performance enhancements. You can see more about 0.8 and 0.8.1 released on the [ZOL project release page directly](https://github.com/zfsonlinux/zfs/releases). 0.8.2 didn't make it on time for a good integration and tests in Eoan. So, we backported some post-release upstream fixes as they fit, like newer kernel compatibility, to provide the best user experience and reliability. Some small upstream fixes and feedback were [contributed by our team](https://github.com/zfsonlinux/zfs/commit/8ae8b2a1445bcccee1bb8ee7d4886f30050f6f53) to upstream ZFS On Linux project.
+
+![ZFS On Linux logo](/images/zsys/zol-logo.png)
 
 Any existing ZFS on root user will automatically get those benefits as soon as they update to Ubuntu 19.10.
 
