@@ -4,7 +4,6 @@ date: 2019-10-11T09:36:19+02:00
 tags: [ "pu", "ubuntu", ]
 banner: "/images/zsys/eoan-installer-choice.png"
 type: "post"
-draft: true
 manualdiscourse: "https://discourse.ubuntu.com/t/enhancing-our-zfs-support-on-ubuntu-19-10-an-introduction/12130"
 ---
 
