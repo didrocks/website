@@ -2,7 +2,7 @@
 title: "ZFS focus on Ubuntu 20.04 LTS: Zsys general presentation"
 date: 2020-05-01T09:36:19+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
-banner: "/images/zsys/openzfs.svg"
+banner: "/images/focal/zsys_architecture.png"
 type: "post"
 manualdiscourse: "https://discourse.ubuntu.com/t/XXXXX"
 draft: True
@@ -10,7 +10,7 @@ draft: True
 
 # ZFS focus on Ubuntu 20.04 LTS: Zsys general presentation
 
-In [our previous blog post](https://didrocks.fr/XXXXX), we presented some enhancements and differences between Ubuntu 19.10 and Ubuntu 20.04 LTS in term of ZFS support. We only alluded to [Zsys](https://github.com/ubuntu/zsys), our ZFS system helper, which is now installed by default when selecting ZFS on root installation on the Ubuntu Desktop.
+In [our previous blog post](https://didrocks.fr/TODO), we presented some enhancements and differences between Ubuntu 19.10 and Ubuntu 20.04 LTS in term of ZFS support. We only alluded to [Zsys](https://github.com/ubuntu/zsys), our ZFS system helper, which is now installed by default when selecting ZFS on root installation on the Ubuntu Desktop.
 
 It’s now time to shed some lights on it and explains what exactly Zsys is bringing to you.
 
@@ -67,7 +67,7 @@ This goes further than OpenZFS rollbacks as we made revert a non destructive act
 
 Note: simply put if you are unfamiliar with ZFS technology and terminology, you can think of a dataset as a directory that you can control independently of the rest of your system: each dataset can be saved and restored separately, have their own history, properties, quotas…
 
-TODO: image for grub with history
+![History with zsys](/images/focal/zsys_grub_back_to_the_future.png)
 
 In a nutshell, we try to ensure high fidelity when you revert your system so that you can trustly and safely boot on an older state of your system.
 
@@ -129,7 +129,7 @@ This will have also its dedicated post, but in summary, we are trying to prune s
 
 Something that isn’t really well supported nowdays was multiple OpenZFS installation on the same machines. This isn’t fully complete yet (you can’t have 2 pools of the same name, like `rpool` or `bpool`), but if you install manually a secondary machine on the same pools or different ones (with different names)!
 
-[TODO: Menu of grub with multiple machines]
+![Multiple machine support with zsys](/images/focal/zsys_multiple_machines.png)
 
 Both will have their own separate history of states and zsys will manage both! You can have shared and unshared user home data.
 
@@ -137,7 +137,7 @@ Both will have their own separate history of states and zsys will manage both! Y
 
 We built Zsys on multiple principles.
 
-TODO: graph (with polkit and reading ZFS properties)
+![Zsys architecture](/images/focal/zsys_architecture.png)
 
 ### Lighweight
 
@@ -153,7 +153,7 @@ Secondly, we don’t want to maintain a separate database for ZFS dataset layout
 
 Thirdly, permission handling is mediated via [polkit](https://www.freedesktop.org/software/polkit/docs/latest/) which is a familiar mechanism to administrator and compatible with company-wide policies. If any priviledge escalation is needed, the system will you for it.
 
-TODO: IMAGE of POLKIT
+![Polkit request for performing system write operation](/images/focal/zsys_polkit.png)
 
 We will develop this topic a little bit more in future posts.
 
@@ -248,9 +248,7 @@ We didn’t want to force upon user a strict zsys layout. First, we will have di
 
 ### Strongly tested
 
-We put a strong emphasize on testing:
-
-Zsys itself is currently covered by more than 680 tests (from units to integration tests). It can exercise real ZFS system but we built also an in memory mock to run any tests on real system or within memory (which can parallelize tests for instance).
+We put a strong emphasize on testing. Zsys itself is currently covered by more than 680 tests (from units to integration tests). It can exercise real ZFS system but we built also an in memory mock to run any tests on real system or within memory (which can parallelize tests for instance).
 
 We also have more than 400 integration tests for grub menu building, covering a wide variety of dataset layouts configuration.
 
@@ -258,7 +256,7 @@ We also have more than 400 integration tests for grub menu building, covering a 
 
 I hope you can appreciate that we put a lot of thoughts and care on Zsys and how it integrates with the ZFS system.
 
-Of course, bugs can and will occur. This is why (our default bug report template](https://github.com/ubuntu/zsys/issues/new?template=bug_report.md) is asking to run `ubuntu-bug zsys` as we collect a bunch of non private information on your system, which will help us to understand what configuration your are running with and what actually happened in various part of the system (OpenZFS, grub or Zsys itself)!
+Of course, bugs can and will occur. This is why [our default bug report template](https://github.com/ubuntu/zsys/issues/new?template=bug_report.md) is asking to run `ubuntu-bug zsys` as we collect a bunch of non private information on your system, which will help us to understand what configuration your are running with and what actually happened in various part of the system (OpenZFS, grub or Zsys itself)!
 
 Again, most of the features are completely working under the hood and transparently to the user! I hope this gives you a sneak preview of what Zsys is capable of doing. I teased a lot about further development and explanation I couldn’t include there (this is already long enough) on a lot of those concepts. This is why we will dive right into state management (which will include revert, bisections and more)! See you there :)
 
