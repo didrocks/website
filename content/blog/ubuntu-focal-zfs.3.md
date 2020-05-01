@@ -10,7 +10,7 @@ draft: True
 
 # ZFS focus on Ubuntu 20.04 LTS: ZSys sate management
 
-After [our previous general presentation](https://didrocks.fr/TODO) of [ZSys](https://github.com/ubuntu/ZSys), it’s """time""" to deep dive to one of its main predominant feature: state management!
+After [our previous general presentation](https://didrocks.fr/TODO) of [ZSys](https://github.com/ubuntu/zsys), it’s """time""" to deep dive to one of its main predominant feature: state management!
 
 
 ## Why calling that state and not simply ZFS snapshots?
