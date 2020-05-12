@@ -2,7 +2,7 @@
 title: "ZFS focus on Ubuntu 20.04 LTS: ZSys for system administrators"
 date: 2020-05-01T09:36:19+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
-banner: "/images/focal/garbage_collection.jpg"
+banner: "/images/focal/zsys_sysadmin.png"
 type: "post"
 manualdiscourse: "https://discourse.ubuntu.com/t/XXXXX"
 draft: True
