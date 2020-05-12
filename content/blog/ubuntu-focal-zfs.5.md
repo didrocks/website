@@ -154,7 +154,7 @@ Remember that we always treat system states before treating user states, and the
 
 ### Can we tweak that manually?
 
-We described the default policy embedded in the binary. However, as an experiment (and because all those rules are not set in stone yet), you can define your own policy manually by copying the configuration policy file [zsys.conf](https://github.com/ubuntu/zsys/blob/master/internal/config/zsys.conf) as `/etc/zsys.conf` and tweaking it here. This change will be effective on daemon restart.
+We described the default policy embedded in the binary. However, as an experiment (and because all those rules are not set in stone yet), you can define your own policy manually by copying the configuration policy file [zsys.conf](https://github.com/ubuntu/zsys/blob/master/internal/config/zsys.conf) as `/etc/zsys.conf` and tweaking it here. This change will be effective on after calling `zsysctl service reload` or on daemon restart.
 
 ### Future work
 
