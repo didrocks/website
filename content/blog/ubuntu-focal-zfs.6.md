@@ -215,12 +215,13 @@ As when you are root (via sudo), polkit is bypassed, this is not reflected here.
 
 ### Remaining service management commands
 
-Those commands are more for debugging and shouldn’t be needed anyway, but to be exhaustive:
+Those commands are more for debugging purposes and shouldn’t be needed directly by any users. This is in particular exercised for internal processing or by our [apport hook](https://github.com/ubuntu/zsys/blob/master/debian/zsys.apport) which collects a lot of information on your system to help debugging it.
 
+Just a note, if you report bugs, please use `ubuntu-bug zsys` to report anything or [follow the instructions](https://github.com/ubuntu/zsys/issues/new?template=bug_report.md) on the upstream github repo template to help us having all needed information. :)
+ 
 #### zsysctl service dump
 
 This dump a bunch of info of the current state of the world that ZSys sees. You will see all machines, current machines, current unmanaged ZFS datasets and more.
-
 
 #### zsysctl service gc
 
@@ -426,7 +427,7 @@ WantedBy=default.target
 
 ## Final note
 
-We hope that gives you some clue, as a sysadmin, to understand a little bit more how ZSys integrates with the system. We tried to shed some lights on how you can tweak it, with traditional systemd administrators tooling, by annotating and changing parameters in various service files. Logs can help you monitoring and understanding what exactly is happening on your system. By the way, an awesome easy way to contribute and help without too much programming knowledge is contributing on logs (when do we have too many of them, are they using the right level of logging, are they any missing or unclear which should be reformatted?). If you are interested in such contributions, do not hesitate to head down to the [ZSys repository](https://github.com/ubuntu/zsys).
+We hope that gives you some clue, as a sysadmin, to understand a little bit more how ZSys integrates with the system. We tried to shed some lights on how you can tweak it, with traditional systemd administrators tooling, by annotating and changing parameters in various service files. Logs can help you monitoring and understanding what exactly is happening on your system. By the way, an awesome easy way to contribute and help without too much programming knowledge is contributing on logs (when do we have too many of them, are they using the right level of logging, are they any missing or unclear which should be reformatted?). If you are interested in such contributions, do not hesitate to head down to the [ ZSys repository](https://github.com/ubuntu/zsys).
 
 We are now going to start looking in details how this all interacts with the underlying lower level materials, like partitions, ZFS datasets and various inherent properties. See you there :)
 
