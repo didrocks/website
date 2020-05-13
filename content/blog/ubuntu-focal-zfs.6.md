@@ -392,7 +392,7 @@ If nothing has changed since the last boot, this is generally a no-op and .mount
 
 However, if you reverting to a previous system state or if some caches are not available (`/etc/zfs/zpool.cache` or `/etc/zfs/zfs-list.cache/*` files being empty), we are going a little bit further and try to reconciliate with the desired state. Under those conditions, the hidden synchronous command `zsysd boot-prepare` is called, which will clone any needed datasets and associate user states to it: current user state if no user revert was selected or previous user state if user revert option was selected. Then, we regenerate the cache list and let the generator do its magic with the .mount files generation.
 
-If anything goes badly, you will be dropped in emergency state for you to debug what went wrong. At worst, you should be able to reboot on current state without a glitch!
+If anything goes badly, you will be dropped in emergency state for you to debug what went wrong. At worst, you should be able to reboot on current state without any glitches!
 
 ### Committing current boot
 
@@ -427,7 +427,7 @@ WantedBy=default.target
 
 ## Final note
 
-We hope that gives you some clue, as a sysadmin, to understand a little bit more how ZSys integrates with the system. We tried to shed some lights on how you can tweak it, with traditional systemd administrators tooling, by annotating and changing parameters in various service files. Logs can help you monitoring and understanding what exactly is happening on your system. By the way, an awesome easy way to contribute and help without too much programming knowledge is contributing on logs (when do we have too many of them, are they using the right level of logging, are they any missing or unclear which should be reformatted?). If you are interested in such contributions, do not hesitate to head down to the [ ZSys repository](https://github.com/ubuntu/zsys).
+We hope that gives you some clue, as a sysadmin, to understand a little bit more how ZSys integrates with the system. We tried to shed some lights on how you can tweak it, with traditional systemd administrators tooling, by annotating and changing parameters in various service files. Logs can help you monitoring and understanding what exactly is happening on your system. By the way, an awesome easy way to contribute and help without too much programming knowledge is contributing on logs (when do we have too many of them, are they using the right level of logging, are they any missing or unclear which should be reformatted?). If you are interested in such contributions, do not hesitate to head down to the [ZSys repository](https://github.com/ubuntu/zsys).
 
 We are now going to start looking in details how this all interacts with the underlying lower level materials, like partitions, ZFS datasets and various inherent properties. See you there :)
 

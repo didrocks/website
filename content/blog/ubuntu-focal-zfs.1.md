@@ -60,7 +60,7 @@ And that’s it! For your daily driver, you don’t need to do anything more. Un
 
 For technical savy users, they will be delighted to know that we upgraded the **bpool** version to 5000 (previously, it was at version 28). We created - only on **bpool** - a selection of features to ensure that grub will be able to read and boot from any ZFS filesystem or snapshot datasets.
 
-However, zpool command line users were encouraged then to upgrade the pool to enable new features on it, those being incompatible with grub! Worse, once the pool was upgraded, it was impossible to downgrade and your system was basically broken. Seeing this happening and until there is a dedicated version-by-components (discussions started upstream), we removed this message on **bpool** from `zpool status` and prevented to upgrade is with `zpool upgrade`. **rpool** doesn’t have this limitation and have a bunch of features enabled.
+However, `zpool` command line users were encouraged then to upgrade the pool to enable new features on it, those being incompatible with grub! Worse, once the pool was upgraded, it was impossible to downgrade and your system was basically broken. Seeing this happening and until there is a dedicated version-by-components (discussions started upstream), we removed this message on **bpool** from `zpool status` and prevented to upgrade is with `zpool upgrade`. **rpool** doesn’t have this limitation and have a bunch of features enabled.
 
 ## Boot enhancements
 
