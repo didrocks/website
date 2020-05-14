@@ -396,9 +396,9 @@ If anything goes badly, you will be dropped in emergency state for you to debug 
 
 ### Committing current boot
 
-Preparing the system is great, but ensuring that we reboot successfully is interesting as well. The last service starts after we hit `default.target` (which is a symlink to `graphical.target`) to commit the boot as being successful. This updates the current boot time, which kernel we successfully booted with (to ensure future saved states knows on which kernel to rely on).
+Preparing the system is great, but ensuring that we reboot successfully is interesting as well. The last service starts after we hit `default.target` (which is a symlink to `graphical.target`) to commit the boot as being successful. This updates the current boot time (last-used updated), which kernel we successfully booted with (to ensure future saved states knows on which kernel to rely on).
 
-If we were reverting to a previous state (current state being different from last succesful boot state), we also update the bootloader menu to store all that and put on top of the menu the current state.
+If we were reverting to a previous state (current state being different from last succesful boot state), we recursively promote (in term of ZFS promotion) all current system and user datasets from the current states so that the other datasets becomes clones of it (all snapshots done before the revert point will migrate to it). Then, if necessary, we update the bootloader menu to store all that and put on top of the menu the current state.
 
 The service in charge of that is calling the hidden `zsysctl boot commit` command.
 

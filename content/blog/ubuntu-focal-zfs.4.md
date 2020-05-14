@@ -80,7 +80,7 @@ For those interested, we are going to see all this more in details in the advanc
 * We have system states and states for each users.
 * The history for each history state have time associated when they were taken or last booted on.
 * We have more states saved from our connected user (didrocks) than other users or system states.
-* A lot of state saves contains **@autozsys_** which are automated user or system state saves.
+* A lot of state saves contains **@autozsys_** which are automated user or system state saves. Some other have manually named suffix **@mySavedState**.
 * People can save states manually, which is exactly what we are going to cover just now!
 
 ### Saving states manually
