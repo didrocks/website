@@ -10,16 +10,16 @@ draft: True
 
 # ZFS focus on Ubuntu 20.04 LTS: ZSys for system administrators
 
-Now that we covered the [basics ZSys functions](https://didrocks.fr/TODO), which are generally fully transparent to the users. However, most of system administrators are more likely to deep dive in more details, how you can tweak this and wants to understand how this is all functioning. This is the start of this part of the series!
+Now that we covered the [basics ZSys functions](https://didrocks.fr/TODO), I think you realize that the system is generally fully transparent to the users. However, most of system administrators are more likely to want to deep dive in more details on how you can tweak those behavior and observe more information on the current status. We getting more technical from now on and for the rest of the series covering ZSys & ZFS on ubuntu 20.04 LTS!
 
 ## Client/Service architecture
 
-As explained in the [corresponding post](https://didrocks.fr/TODO), ZSys has a client/service architecture (mediated by [polkit](https://www.freedesktop.org/software/polkit/docs/latest/)). The unix socket which activates on demand `zsysd` is using **[SO_PEERCRED](https://blog.jbowen.dev/2019/09/using-so_peercred-in-go/)** to pass credentials (who/when) and with [some (black magic) wizardry](https://github.com/ubuntu/zsys/blob/master/internal/authorizer/servercreds.go) and multiple attempts, we were able to make it work over [gRPC](https://grpc.io/), which is the communication RPC framework we are using. As this whole combination was not really documented anywhere on the net, it may be useful to document that in a more technical blog post in the future. So if you are interested, let me know in the discourse link!
+As explained in the [corresponding post](https://didrocks.fr/TODO), ZSys has a client/service architecture (mediated by [polkit](https://www.freedesktop.org/software/polkit/docs/latest/)). The unix socket which activates on demand `zsysd` is using **[SO_PEERCRED](https://blog.jbowen.dev/2019/09/using-so_peercred-in-go/)** to pass credentials (who/when) and with [some (black magic) wizardry](https://github.com/ubuntu/zsys/blob/master/internal/authorizer/servercreds.go) and multiple attempts, we were able to make it work over [gRPC](https://grpc.io/), the communication RPC framework we are using. As this whole combination was not really documented anywhere on the Internet, it may be useful to document that in a more technical blog post in the future. So if you are interested, let us know in the discourse link!
 
 ![ZSys architecture](/images/focal/zsys_architecture.png)
 
 This is why we have a `zsysctl service` commands with a bunch of subcommands:
-```
+```sh
 $ zsysctl help service
 Service management
 
@@ -48,7 +48,7 @@ Use "zsysctl service [command] --help" for more information about a command.
 
 ### Daemon logs and request identifiers
 
-All logs ends up in the [systemd journal](https://www.freedesktop.org/software/systemd/man/journalctl.html). By default, it will only prints warnings and such. You can change the daemon loglevel for the current requests with `zsysctl service loglevel` subcommand. Note that for now, it’s not persistent and reset once the daemon stop.
+All logs end up in the [systemd journal](https://www.freedesktop.org/software/systemd/man/journalctl.html). By default, it will only print warnings and more important messages. You can change the daemon loglevel for the current requests with `zsysctl service loglevel` subcommand. Note that for now, it’s not persistent and reset once the daemon stops.
 
 The default will only print warnings or errors:
 
@@ -56,20 +56,20 @@ The default will only print warnings or errors:
 ## Making a client request
 $ zsysctl service refresh
 ## Looking at the logs, nothing printed is good
-sudo journalctl -b -u zsysd
+$ journalctl -b -u zsysd
 mai 12 10:32:21 casanier systemd[1]: Starting ZSYS daemon service...
 mai 12 10:32:21 casanier systemd[1]: Started ZSYS daemon service.
 mai 12 10:33:21 casanier systemd[1]: zsysd.service: Succeeded.
 ```
 
-We can tweak the log level by requesting to print INFO or more serious issue with "1" or having ton of logs with DEBUG or above with "2":
+We can tweak the log level by requesting to print starting with INFO level with "1" or having ton of logs with DEBUG or above with "2":
 
 ```sh
 ## Change the log level to INFO
 $ zsysctl service loglevel 1
 ## Making a client request
 $ zsysctl service refresh
-## Looking at the logs, note the INFO request
+## Looking at the logs, note the INFO messages
 $ journalctl -b -u zsysd
 mai 12 10:32:21 casanier systemd[1]: Starting ZSYS daemon service...
 mai 12 10:32:21 casanier systemd[1]: Started ZSYS daemon service.
@@ -78,20 +78,20 @@ mai 12 10:32:44 casanier zsysd[81729]: level=info msg="[[ae564ded:eaa4f052]] Req
 mai 12 10:33:44 casanier systemd[1]: zsysd.service: Succeeded.
 ```
 
-**INFO** level will log any incoming requests with the request identifier in addition to more important messages. Note that each request has an identifier ID. This one is broken up in two parts, each part being generated by the service: **[[ae564ded:eaa4f052]]**. The first part before **:** is the client ID.
+**INFO** level will log any incoming requests with the request identifier in addition to more important messages. Note that each request has an identifier ID. This one is broken up in two parts, each part being generated by the service: "**[[ae564ded:eaa4f052]]**". The first part before "**:**" is the client ID.
 
-Multiple requests by the same process (for instance, when we request your feedback, like a confirmation of state deletion having dependencies) or future GUI will have an unique client ID so that you can track those requests.
+Multiple requests by the same process (for instance, when we request your feedback, like a confirmation of state deletion which has dependencies) or future GUI will have an unique client ID so that you can track those requests.
 
 The second part identifies the request itself and will be different on each gRPC call (client/daemon).
 ```sh
 ## Change the log level to INFO and make a call with multiple requests from the same instance
 $ zsysctl service loglevel 1
 ## Client will call the service twice
-$ zsysctl state remove 5uoaut   ## <- first call
+$ zsysctl state remove 5uoaut   ## <- first gRPC request
 rpool/USERDATA/didrocks_wbdgr3@autozsys_5uoaut has a dependency on some datasets:
   - rpool/myclone
 
-Would you like to proceed [y/N]? y   ## <- second call
+Would you like to proceed [y/N]? y   ## <- second gRPC request
 ## Let check this
 $ journalctl -b -u zsysd
 mai 12 10:48:19 casanier zsysd[94405]: level=info msg="new incoming request RemoveUserState() for \"08a2f44c:1871e35b\""
@@ -100,15 +100,15 @@ mai 12 10:48:22 casanier zsysd[94405]: level=info msg="new incoming request Remo
 mai 12 10:48:22 casanier zsysd[94405]: level=info msg="[[08a2f44c:1cfb125a]] Requesting to remove user state \"5uoaut\" for user didrocks"
 ```
 
-You will note here that the 2 requests have been made consequently by the same client (same process) that we identified by "08a2f44c", but each one has a different trailing identifier.
+You will note here that the 2 requests have been made consequently by the same client (same process) that we identified by "08a2f44c", but each call has a different trailing identifier.
 
-Note that if multiple requests are running in parallel (all read-only call can be run in parallel for instance), the log will be intertwined. However, each log on the daemon side will be prefixed by the identifier ID like `[[08a2f44c:1cfb125a]]` so that you can follow client/requests in flights and their impacts.
+Note that if multiple requests are running in parallel (all read-only call can be run in parallel for instance), the log will be intertwined. However, each log on the daemon side will be prefixed by the identifier ID like **[[08a2f44c:1cfb125a]]** so that you can follow client/requests in flights and their impacts.
 
 ### Log streaming
 
-Having logs in the service side is great, but I’m sure you will be more interested in seeing the logs attached to your specific request itself!
+Checking logs on the service side is great, but I’m sure you will be more interested in seeing the logs attached to your specific request itself from the client!
 
-Independent of the service log level itself, you can request streaming of your logs directly to your client. This will be filtered out and only logs for your current request will be streamed to a particular client, even when you have multiple requests in flights from the same or different clients! This can be controlled via `-v` (INFO) or `-vv` (DEBUG) flags for any client requests.
+Independent of the service log level itself, you can request streaming of your related logs directly to your client. This will be filtered out and only logs for your current request will be streamed to a particular client, even when you have multiple parallel requests in flights from the same or different clients! This can be controlled via `-v` (INFO) or `-vv` (DEBUG) flags for any client requests.
 
 Here is an example with the service being at the default log level (WARNING and more), while the client is requesting debug logs:
 ```sh
@@ -145,17 +145,17 @@ DEBUG ZFS: transaction done
 Successfully saved as "autozsys_r8vem8"
 ```
 
-You can note that the service is streaming some DEBUG and INFO logs to the client, after signalling the associated requester and request ID to the client. This will ease tracing those requests also in the journal if you want to look at all logs directly on the daemon.
+In the previous output, that the service is streaming some DEBUG and INFO logs to the client, after signalling the associated requester and request ID to the client. This will ease tracing those requests also in the journal if you want to look at all logs directly on the daemon.
 
-You can see in the logs that we first validate authorization for a given request.
+You can note in the above logs that we first validate authorization for a given request.
 
 ### Polkit authorizations
 
-Each request is tested given the current context (which user is requesting what) and this is confronted in our [authorizer framework](https://github.com/ubuntu/zsys/blob/master/internal/authorizer/authorizer.go) against polkit rules.
+Each request is checked given the current context (which user is requesting what) and this is confronted to our [authorizer framework](https://github.com/ubuntu/zsys/blob/master/internal/authorizer/authorizer.go) against polkit rules.
 
 #### User, request and authorization
 
-A successful authorization will be, after polkit prompt:
+A successful authorization will log, after polkit prompt:
 ```sh
 DEBUG Check if grpc request peer is authorized     
 DEBUG Polkit call result, authorized: true  
@@ -163,7 +163,7 @@ DEBUG Polkit call result, authorized: true
 
 ![Polkit request for performing system write operation](/images/focal/zsys_polkit.png)
 
-A denied authorization (wrong password or not an user authorized to perform this authorization by polkit) will give to the user:
+A denied authorization (wrong password or not an user authorized to perform this authorization by polkit) will return an error to the user:
 ```sh
 $ zsysctl service refresh
 ERROR Permission denied: Polkit denied access  
@@ -199,9 +199,9 @@ INFO Requesting to save state for user "didrocks"
 
 #### Default policies and relaxing rules
 
-The default policy is installed as `/usr/share/polkit-1/actions/com.ubuntu.zsys.policy` on the system. This can be relaxed by system administrators following polkit rules.
+The default policy is installed to `/usr/share/polkit-1/actions/com.ubuntu.zsys.policy` on the system. This can be relaxed by system administrators following polkit rules.
 
-Let’s have a look at our [default rules](https://github.com/ubuntu/zsys/blob/master/internal/authorizer/com.ubuntu.zsys.policy). By default, in summary, people can:
+Let’s have a look at our [default rule set](https://github.com/ubuntu/zsys/blob/master/internal/authorizer/com.ubuntu.zsys.policy). By default, in summary, people can:
 
 * Always list machines and states associated to machines (rule `com.ubuntu.zsys.system-list`)
 * Always save and remove their own state (rule `com.ubuntu.zsys.user-write-self`)
@@ -209,19 +209,19 @@ Let’s have a look at our [default rules](https://github.com/ubuntu/zsys/blob/m
 * Need administrator permissions to save or remove system states (rule `com.ubuntu.zsys.system-write`)
 * Need administrator permissions for any service management (rule `com.ubuntu.zsys.manage-service`)
 
-If you have a long running process, like a future GUI, we used `auth_admin_keep` as default to avoid asking every time for permissions. This is why you only have one polkit permission request when requesting destroying some states having dependencies, even if this is made of 2 requests. However, as command line execution is a new process, the permission will be requested each time.
+If you have a long running process, like a future GUI, we specified the `auth_admin_keep` value as default to avoid asking every time for permissions. This is why you only have one polkit permission request when requesting destroying some states having dependencies, even if this is made of 2 consecutive requests. However, as any command line execution is a new process, the permission will be requested each time.
 
 As when you are root (via sudo), polkit is bypassed, this is not reflected here.
 
 ### Remaining service management commands
 
-Those commands are more for debugging purposes and shouldn’t be needed directly by any users. This is in particular exercised for internal processing or by our [apport hook](https://github.com/ubuntu/zsys/blob/master/debian/zsys.apport) which collects a lot of information on your system to help debugging it.
+Those commands are more for debugging purpose and shouldn’t be needed directly by any users. This is in particular exercised for internal processing or by our [apport hook](https://github.com/ubuntu/zsys/blob/master/debian/zsys.apport) which collects a lot of information on your system to help debugging it.
 
-Just a note, if you report bugs, please use `ubuntu-bug zsys` to report anything or [follow the instructions](https://github.com/ubuntu/zsys/issues/new?template=bug_report.md) on the upstream github repo template to help us having all needed information. :)
+Just a note, if you report bugs, please use `ubuntu-bug zsys` to report anything or [follow the instructions](https://github.com/ubuntu/zsys/issues/new?template=bug_report.md) on the upstream github repo template to help us collecting every necessary information. :)
  
 #### zsysctl service dump
 
-This dump a bunch of info of the current state of the world that ZSys sees. You will see all machines, current machines, current unmanaged ZFS datasets and more.
+This dumps a bunch of info on the current state of the world that ZSys sees. You will see all machines, current machines, current unmanaged ZFS datasets and more.
 
 #### zsysctl service gc
 
@@ -229,7 +229,7 @@ This is what is called by systemd timers to call for state garbage collection, a
 
 #### zsysctl service refresh
 
-This forces ZSys to rescan any ZFS datasets on the system and take them into account. Note that this isn’t necessary in general as the refresh is done for you by ZSys or we will have hooks when the users do changes outside of ZSys.
+This forces ZSys to rescan any ZFS datasets on the system and take them into account. Note that this isn’t needed in general as the refresh is done for you by ZSys or we will have hooks when the users do changes outside of ZSys.
 
 #### zsysctl service reload
 
@@ -247,7 +247,7 @@ It forces the daemon to shut down immediately rather after a timeout.
 
 This command starts profiling until you exit this command yourself or when duration is done. Default is CPU profiling with a 30s timeout. You can trigger pprof memory profile or systrace.
 
-## Systemd service, timers and more system administrator
+## Systemd services, timers and more system administrator tools
 
 Another way for the system administrator to control their service is to know what triggers zsysd periodically and how. You can manage most of them by systemd tooling. Here is a summary:
 
@@ -282,7 +282,7 @@ ExecStart=/sbin/zsysctl state save
 
 ### System state saves on apt changes
 
-System state saved are separate in two parts. Before the first apt operation (in case you have multiple of them processed by do-release-upgrade, see the (corresponding blog post](https://didrocks.fr/TODO) for details), we take the current system state (and all users) snapshots in an autogenerated state save. Then, after the first apt operation, we rebuild the boot menu to take into account the newly create state save. This will allow reverting if needed. We delayed after the first apt operation to ensure we limit the waiting time to have the new software installed, upgraded or removed (building the bootloader menu can take some time).
+System state saved are made in two parts. Before the first apt operation (in case you have multiple of them processed by do-release-upgrade, see the (corresponding blog post](https://didrocks.fr/TODO) for details), we take the current system state (and all users) snapshots in an autogenerated state save. Then, after the first apt operation, we rebuild the boot menu to take into account the newly create state save. This will allow reverting when needed. We delayed the menu build only after the first apt operation to ensure we limit the waiting time to have the new software installed, upgraded or removed: building the bootloader menu can indeed take some time.
 
 ```sh
 $ apt <something>
@@ -324,7 +324,7 @@ ExecStart=/sbin/zsysctl service gc
 
 ### Zsysd activation
 
-The ZSys daemon, zsysd, is socket activated (the unix socket is `/run/zsysd.sock`) associated by its service:
+The ZSys daemon, zsysd, is socket activated (the unix socket is `/run/zsysd.sock`) associated to its service:
 ```sh
 $ cat /lib/systemd/system/zsysd.socket
 [Unit]
@@ -338,7 +338,7 @@ ListenStream=/run/zsysd.sock
 WantedBy=sockets.target
 
 
-$ cat /lib/systemd/system/zsysd.service 
+$ cat /lib/systemd/system/zsysd.service
 [Unit]
 Description=ZSYS daemon service
 After=zsysd.socket
@@ -358,11 +358,11 @@ PrivateNetwork=true
 
 The service will notify systemd once it’s ready and take the incoming request which is pending on the socket once activated. After a minute of idling without any new requests, it will stop.
 
-If no socket was created and you execute zsysd manually, the daemon will attempt to create one and refuse to start if it can’t.
+If no socket was created and you execute `zsysd` manually, the daemon will attempt to create one and refuse to start if it can’t.
 
 ### Early bootup
 
-We are using zfs new generator to speed up the boot process, which generates .mount files to let systemd mounting the path as requested:
+We are using zfs new generator to speed up the boot process, which generates .mount files and let systemd mounting the path when required:
 
 ```sh
 $ ls /run/systemd/generator/*.mount
@@ -386,17 +386,17 @@ $ ls /run/systemd/generator/*.mount
  /run/systemd/generator/var-www.mount
 ```
 
-All of them but `boot-efi.mount` and `boot-grub.mount`, which are coming from `/etc/fstab` are created by the generator.
+All of them but `boot-efi.mount` and `boot-grub.mount`, which are coming from `/etc/fstab` (though the systemd fstab generator) are created by the zfs mount generator.
 
-If nothing has changed since the last boot, this is generally a no-op and .mount files will be generated as upstream intended to. ZSys is going out of the way in that case.
+If nothing has changed since the last boot, this is generally a no-op and .mount files will be generated as upstream intended to. ZSys is going out of the way in that case, which is the most common one.
 
-However, if you reverting to a previous system state or if some caches are not available (`/etc/zfs/zpool.cache` or `/etc/zfs/zfs-list.cache/*` files being empty), we are going a little bit further and try to reconciliate with the desired state. Under those conditions, the hidden synchronous command `zsysd boot-prepare` is called, which will clone any needed datasets and associate user states to it: current user state if no user revert was selected or previous user state if user revert option was selected. Then, we regenerate the cache list and let the generator do its magic with the .mount files generation.
+However, if you reverting to a previous system state or if some cache is not available (`/etc/zfs/zpool.cache` or `/etc/zfs/zfs-list.cache/*` files being empty), we are going a little bit further and try to reconciliate with the desired state. Under those conditions, the hidden synchronous command `zsysd boot-prepare` is executed, which will clone any needed datasets and associate user states to it: current user state if no user revert was selected or previous user state if user revert option was selected. Then, we regenerate the cache list and let the generator do its magic with the `.mount` files generation.
 
-If anything goes badly, you will be dropped in emergency state for you to debug what went wrong. At worst, you should be able to reboot on current state without any glitches!
+If anything goes badly, you will be dropped in emergency state so that you can debug and fix what went wrong. At worst, you should be able to reboot on current state without any glitches!
 
 ### Committing current boot
 
-Preparing the system is great, but ensuring that we reboot successfully is interesting as well. The last service starts after we hit `default.target` (which is a symlink to `graphical.target`) to commit the boot as being successful. This updates the current boot time (last-used updated), which kernel we successfully booted with (to ensure future saved states knows on which kernel to rely on).
+Preparing the system is great, but ensuring that we reboot successfully is interesting as well. The last ZSys service starts after we hit `default.target` (which is a symlink to `graphical.target`) to commit the boot as being successful. This updates the current boot time (last-used updated) and which kernel we successfully booted with (to ensure future saved states knows on which kernel to rely on).
 
 If we were reverting to a previous state (current state being different from last succesful boot state), we recursively promote (in term of ZFS promotion) all current system and user datasets from the current states so that the other datasets becomes clones of it (all snapshots done before the revert point will migrate to it). Then, if necessary, we update the bootloader menu to store all that and put on top of the menu the current state.
 
@@ -425,10 +425,14 @@ PrivateNetwork=true
 WantedBy=default.target
 ```
 
+Note that both `zsysd boot-prepare` and `zsysctl boot commit` are idemnpotent.
+
 ## Final note
 
-We hope that gives you some clue, as a sysadmin, to understand a little bit more how ZSys integrates with the system. We tried to shed some lights on how you can tweak it, with traditional systemd administrators tooling, by annotating and changing parameters in various service files. Logs can help you monitoring and understanding what exactly is happening on your system. By the way, an awesome easy way to contribute and help without too much programming knowledge is contributing on logs (when do we have too many of them, are they using the right level of logging, are they any missing or unclear which should be reformatted?). If you are interested in such contributions, do not hesitate to head down to the [ZSys repository](https://github.com/ubuntu/zsys).
+We hope that gives you some information and tools, as a sysadmin, to understand a little bit more how ZSys integrates with the system. We tried to shed some lights on how you can tweak it, with traditional systemd administrators tooling, by annotating and changing parameters in various service files. Logs can help you monitoring and understanding what exactly is happening on your system.
 
-We are now going to start looking in details how this all interacts with the underlying lower level materials, like partitions, ZFS datasets and various inherent properties. See you there :)
+By the way, an awesome easy way to contribute and help without too much programming knowledge is contributing on logs (when do we have too many of them, are they using the right level of logging, are they any missing or unclear which should be reformatted?). If you are interested in such contributions, do not hesitate to head down to the [ZSys repository](https://github.com/ubuntu/zsys), open issues, PR…
+
+We are now going to start looking in details how this all interact with the underlying lower level material, like partitions, ZFS datasets and various inherent properties. See you there :)
 
 Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/).
