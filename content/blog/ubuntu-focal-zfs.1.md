@@ -1,11 +1,11 @@
 ---
 title: "ZFS focus on Ubuntu 20.04 LTS: what’s new?"
-date: 2020-05-01T09:36:19+02:00
+date: 2020-05-21T14:00:00+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
 banner: "/images/zsys/openzfs.png"
 type: "post"
-manualdiscourse: "https://discourse.ubuntu.com/t/XXXXX"
-draft: True
+manualdiscourse: "https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355"
+draft: False
 ---
 
 # ZFS focus on Ubuntu 20.04 LTS: what’s new?
@@ -80,4 +80,4 @@ There are a lot of things to discuss about this component in term of features an
 
 The good news is that most of the features are completely working under the hood and transparently to the user. However, if you need to revert an upgrade, get back old files from an user, or are just interested in it, those posts should be of interest to you! See you there :)
 
-Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/XXXXX).
+Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355).
