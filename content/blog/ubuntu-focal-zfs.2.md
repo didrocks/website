@@ -1,16 +1,16 @@
 ---
 title: "ZFS focus on Ubuntu 20.04 LTS: ZSys general presentation"
-date: 2020-05-01T09:36:19+02:00
+date: 2020-05-26T09:30:19+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
 banner: "/images/focal/zsys_architecture.png"
 type: "post"
-manualdiscourse: "https://discourse.ubuntu.com/t/XXXXX"
+manualdiscourse: "https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355"
 draft: True
 ---
 
 # ZFS focus on Ubuntu 20.04 LTS: ZSys general presentation
 
-In [our previous blog post](https://didrocks.fr/TODO), we presented some enhancements and differences between Ubuntu 19.10 and Ubuntu 20.04 LTS in term of ZFS support. We only alluded to [ZSys](https://github.com/ubuntu/zsys), our ZFS system helper, which is now installed by default when selecting ZFS on root installation on the Ubuntu Desktop.
+In [our previous blog post](/2020/05/21/zfs-focus-on-ubuntu-20.04-lts-whats-new/), we presented some enhancements and differences between Ubuntu 19.10 and Ubuntu 20.04 LTS in term of ZFS support. We only alluded to [ZSys](https://github.com/ubuntu/zsys), our ZFS system helper, which is now installed by default when selecting ZFS on root installation on the Ubuntu Desktop.
 
 It’s now time to shed some lights on it and explain what exactly ZSys is bringing to you.
 
@@ -270,4 +270,4 @@ Of course, bugs can and will occur. This is why [our default bug report template
 
 Again, most of the features are completely working under the hood and transparently to the user! I hope this gives you a sneak preview of what ZSys is capable of doing. I teased a lot about further development and explanation I couldn’t include there (this is already long enough) on a lot of those concepts. This is why we will dive right away into state management (which will include revert, bisections and more)! See you there :)
 
-Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/).
+Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355).
