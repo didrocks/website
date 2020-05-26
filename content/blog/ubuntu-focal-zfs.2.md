@@ -1,11 +1,11 @@
 ---
 title: "ZFS focus on Ubuntu 20.04 LTS: ZSys general presentation"
-date: 2020-05-26T09:30:19+02:00
+date: 2020-05-26T09:22:19+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
 banner: "/images/focal/zsys_architecture.png"
 type: "post"
 manualdiscourse: "https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355"
-draft: True
+draft: False
 ---
 
 # ZFS focus on Ubuntu 20.04 LTS: ZSys general presentation
