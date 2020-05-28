@@ -1,16 +1,15 @@
 ---
 title: "ZFS focus on Ubuntu 20.04 LTS: ZSys general principle on state management"
-date: 2020-05-01T09:36:19+02:00
+date: 2020-05-28T15:00:19+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
 banner: "/images/focal/time_machine.png"
 type: "post"
-manualdiscourse: "https://discourse.ubuntu.com/t/XXXXX"
-draft: True
+manualdiscourse: "https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355"
 ---
 
 # ZFS focus on Ubuntu 20.04 LTS: ZSys sate management
 
-After [our previous general presentation](https://didrocks.fr/TODO) of [ZSys](https://github.com/ubuntu/zsys), it’s """time""" to deep dive to one of its main predominant feature: state management!
+After [our previous general presentation](/2020/05/26/zfs-focus-on-ubuntu-20.04-lts-zsys-general-presentation/) of [ZSys](https://github.com/ubuntu/zsys), it’s """time""" to deep dive to one of its main predominant feature: state management!
 
 
 ## Why calling that state and not simply ZFS snapshots?
@@ -136,4 +135,4 @@ As a reminder, those are the changes which allowed us to reduce `grub.cfg` from 
 
 This was quite dense! We hope we made it easy from a pure user perspective. In the next article, we will detail how and when states are saved, how to manage them and more neaty cripsy details about ZSys states! See you there :)
 
-Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/).
+Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355).
