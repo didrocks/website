@@ -1,16 +1,15 @@
 ---
 title: "ZFS focus on Ubuntu 20.04 LTS: ZSys commands for state management"
-date: 2020-05-01T09:36:19+02:00
+date: 2020-06-02T09:52:19+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
 banner: "/images/focal/time_machine_driver.jpg"
 type: "post"
-manualdiscourse: "https://discourse.ubuntu.com/t/XXXXX"
-draft: True
+manualdiscourse: "https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355"
 ---
 
 # ZFS focus on Ubuntu 20.04 LTS: ZSys commands for state management
 
-In the [previous article](https://didrocks.fr/TODO), we presented the core state concept of [ZSys](https://github.com/ubuntu/zsys). This one will focus more on how you can manage states, when we are taking them automatically or manually and way more general considerations. A lot to cover, so let's go!
+In the [previous article](/2020/05/28/zfs-focus-on-ubuntu-20.04-lts-zsys-general-principle-on-state-management/), we presented the core state concept of [ZSys](https://github.com/ubuntu/zsys). This one will focus more on how you can manage states, when we are taking them automatically or manually and way more general considerations. A lot to cover, so let's go!
 
 ## zsysctl commands related to states
 
@@ -313,4 +312,4 @@ As you can see, there are lot of cases and complex handling of states for remova
 
 We are creating a huge number of state saves automatically for you. but we don’t want our users having to remove them manually. This is why we had to draft a garbage collection strategy so that your disk doesn’t end up being full quickly. This is an interesting topic which will be, coincidentally, the next one! See you there :)
 
-Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/).
+Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355).
