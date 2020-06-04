@@ -1,16 +1,15 @@
 ---
 title: "ZFS focus on Ubuntu 20.04 LTS: ZSys state collection"
-date: 2020-05-01T09:36:19+02:00
+date: 2020-06-04T09:50:19+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
 banner: "/images/focal/garbage_collection.jpg"
 type: "post"
-manualdiscourse: "https://discourse.ubuntu.com/t/XXXXX"
-draft: True
+manualdiscourse: "https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355"
 ---
 
 # ZFS focus on Ubuntu 20.04 LTS: ZSys state collection
 
-In the [past couple of articles](https://didrocks.fr/TODO), we explained the core state concept of [ZSys](https://github.com/ubuntu/zsys), and when we create state saves in particular. A lot of those operations are automated either on a time-scheduled (user states save), on system changes (installation, upgrade or removal for system states) and also when you ask a revert to a previous states.
+In the [past](/2020/05/28/zfs-focus-on-ubuntu-20.04-lts-zsys-general-principle-on-state-management/) [couple](/2020/06/02/zfs-focus-on-ubuntu-20.04-lts-zsys-commands-for-state-management/) of articles, we explained the core state concept of [ZSys](https://github.com/ubuntu/zsys), and when we create state saves in particular. A lot of those operations are automated either on a time-scheduled (user states save), on system changes (installation, upgrade or removal for system states) and also when you ask a revert to a previous states.
 
 Even if individually, the cost of a state save is really low, this creates more and more ZFS datasets over time that will take some disk space. We needed to shape a strategy to clean them up on the go, silently, for our users.
 
@@ -77,7 +76,7 @@ Valid state candidates for garbage collection are any states that don’t have a
 
 ### What is a dependency for a state?
 
-We have already seen this when going over [states removal in the previous article](https://didrocks.fr/TODO) which will exactly show dependencies to you, but as a reminder, states can have dependencies on other states when:
+We have already seen this when going over [states removal in the previous article](/2020/06/02/zfs-focus-on-ubuntu-20.04-lts-zsys-commands-for-state-management/) which will exactly show dependencies to you, but as a reminder, states can have dependencies on other states when:
 
 * your state is associated with filesystem datasets which has dataset snapshots over it (typically: a revert to a previous state which had snapshots after the revert point)
 * your state is associated with dataset snapshots and you have a state made of filesystem dataset clones over it (typically: after a revert)
@@ -166,4 +165,4 @@ As you can think, all of this is backed up with a very extensive test suite as t
 
 But that’s not the end story on our journey through the ZFS integration in Ubuntu 20.04 LTS! In the next blog post, we will list some remaining ZSys user-facing features we didn’t mention yet. We will try to highlight some more tweaking you can do on your system and how all those pieces are fitting together. See you there :)
 
-Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/).
+Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355).
