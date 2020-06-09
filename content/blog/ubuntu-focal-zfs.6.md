@@ -1,24 +1,24 @@
 ---
 title: "ZFS focus on Ubuntu 20.04 LTS: ZSys for system administrators"
-date: 2020-05-01T09:36:19+02:00
+date: 2020-06-09T12:20:19+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
 banner: "/images/focal/zsys_sysadmin.png"
 type: "post"
-manualdiscourse: "https://discourse.ubuntu.com/t/XXXXX"
-draft: True
+manualdiscourse: "https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355"
 ---
 
 # ZFS focus on Ubuntu 20.04 LTS: ZSys for system administrators
 
-Now that we covered the [basics ZSys functions](https://didrocks.fr/TODO), I think you realize that the system is generally fully transparent to the users. However, most of system administrators are more likely to want to deep dive in more details on how you can tweak those behavior and observe more information on the current status. We getting more technical from now on and for the rest of the series covering ZSys & ZFS on ubuntu 20.04 LTS!
+Now that we covered the [basics ZSys functionalities](https://didrocks.fr/2020/05/28/zfs-focus-on-ubuntu-20.04-lts-zsys-general-principle-on-state-management/), I think you realize that the system is generally fully transparent to the users. However, most of system administrators are more likely to want to deep dive in more details on how you can tweak those behavior and observe more information on the current status. We getting more technical from now on and for the rest of the series covering ZSys & ZFS on ubuntu 20.04 LTS!
 
 ## Client/Service architecture
 
-As explained in the [corresponding post](https://didrocks.fr/TODO), ZSys has a client/service architecture (mediated by [polkit](https://www.freedesktop.org/software/polkit/docs/latest/)). The unix socket which activates on demand `zsysd` is using **[SO_PEERCRED](https://blog.jbowen.dev/2019/09/using-so_peercred-in-go/)** to pass credentials (who/when) and with [some (black magic) wizardry](https://github.com/ubuntu/zsys/blob/master/internal/authorizer/servercreds.go) and multiple attempts, we were able to make it work over [gRPC](https://grpc.io/), the communication RPC framework we are using. As this whole combination was not really documented anywhere on the Internet, it may be useful to document that in a more technical blog post in the future. So if you are interested, let us know in the discourse link!
+As explained in the [corresponding post](https://didrocks.fr/2020/05/26/zfs-focus-on-ubuntu-20.04-lts-zsys-general-presentation/), ZSys has a client/service architecture (mediated by [polkit](https://www.freedesktop.org/software/polkit/docs/latest/)). The unix socket which activates on demand `zsysd` is using **[SO_PEERCRED](https://blog.jbowen.dev/2019/09/using-so_peercred-in-go/)** to pass credentials (who/when) and with [some (black magic) wizardry](https://github.com/ubuntu/zsys/blob/master/internal/authorizer/servercreds.go) and multiple attempts, we were able to make it work over [gRPC](https://grpc.io/), the communication RPC framework we are using. As this whole combination was not really documented anywhere on the Internet, it may be useful to document that in a more technical blog post in the future. So if you are interested, let us know in the discourse link!
 
 ![ZSys architecture](/images/focal/zsys_architecture.png)
 
 This is why we have a `zsysctl service` commands with a bunch of subcommands:
+
 ```sh
 $ zsysctl help service
 Service management
@@ -83,6 +83,7 @@ mai 12 10:33:44 casanier systemd[1]: zsysd.service: Succeeded.
 Multiple requests by the same process (for instance, when we request your feedback, like a confirmation of state deletion which has dependencies) or future GUI will have an unique client ID so that you can track those requests.
 
 The second part identifies the request itself and will be different on each gRPC call (client/daemon).
+
 ```sh
 ## Change the log level to INFO and make a call with multiple requests from the same instance
 $ zsysctl service loglevel 1
@@ -111,6 +112,7 @@ Checking logs on the service side is great, but I’m sure you will be more inte
 Independent of the service log level itself, you can request streaming of your related logs directly to your client. This will be filtered out and only logs for your current request will be streamed to a particular client, even when you have multiple parallel requests in flights from the same or different clients! This can be controlled via `-v` (INFO) or `-vv` (DEBUG) flags for any client requests.
 
 Here is an example with the service being at the default log level (WARNING and more), while the client is requesting debug logs:
+
 ```sh
 $ zsysctl save -vv
 level=debug msg="/zsys.Zsys/SaveUserState() call logged as [0cdb03d3:a318e109]"
@@ -156,6 +158,7 @@ Each request is checked given the current context (which user is requesting what
 #### User, request and authorization
 
 A successful authorization will log, after polkit prompt:
+
 ```sh
 DEBUG Check if grpc request peer is authorized     
 DEBUG Polkit call result, authorized: true  
@@ -164,12 +167,14 @@ DEBUG Polkit call result, authorized: true
 ![Polkit request for performing system write operation](/images/focal/zsys_polkit.png)
 
 A denied authorization (wrong password or not an user authorized to perform this authorization by polkit) will return an error to the user:
+
 ```sh
 $ zsysctl service refresh
 ERROR Permission denied: Polkit denied access  
 ```
 
 If we print debug logs, we can see the polkit request and denial:
+
 ```sh
 $ zsysctl service refresh -vv
 level=debug msg="/zsys.Zsys/Refresh() call logged as [330d1dc6:92f4ff3a]"
@@ -188,6 +193,7 @@ DEBUG Authorized as being administrator
 ```
 
 Some permissions like saving your own user state is permitted via our default polkit policy and no prompt for priviledge escalation will be displayed:
+
 ```sh
 $ zsysctl save -vv
 level=debug msg="/zsys.Zsys/SaveUserState() call logged as [dbd64755:b9583f7c]"
@@ -225,7 +231,7 @@ This dumps a bunch of info on the current state of the world that ZSys sees. You
 
 #### zsysctl service gc
 
-This is what is called by systemd timers to call for state garbage collection, as explained in [our previous post](https://didrocks.fr/TODO).
+This is what is called by systemd timers to call for state garbage collection, as explained in [our previous post](https://didrocks.fr/2020/06/04/zfs-focus-on-ubuntu-20.04-lts-zsys-state-collection/).
 
 #### zsysctl service refresh
 
@@ -233,7 +239,7 @@ This forces ZSys to rescan any ZFS datasets on the system and take them into acc
 
 #### zsysctl service reload
 
-This forces reloading any `zsys.conf` configuration, as explained [in a previous blog post](https://didrocks.fr/TODO).
+This forces reloading any `zsys.conf` configuration, as explained [in a previous blog post](https://didrocks.fr/2020/06/04/zfs-focus-on-ubuntu-20.04-lts-zsys-state-collection/).
 
 #### zsysctl service status
 
@@ -282,7 +288,7 @@ ExecStart=/sbin/zsysctl state save
 
 ### System state saves on apt changes
 
-System state saved are made in two parts. Before the first apt operation (in case you have multiple of them processed by do-release-upgrade, see the (corresponding blog post](https://didrocks.fr/TODO) for details), we take the current system state (and all users) snapshots in an autogenerated state save. Then, after the first apt operation, we rebuild the boot menu to take into account the newly create state save. This will allow reverting when needed. We delayed the menu build only after the first apt operation to ensure we limit the waiting time to have the new software installed, upgraded or removed: building the bootloader menu can indeed take some time.
+System state saved are made in two parts. Before the first apt operation (in case you have multiple of them processed by do-release-upgrade, see the (corresponding blog post](https://didrocks.fr/2020/05/26/zfs-focus-on-ubuntu-20.04-lts-zsys-general-presentation/) for more details), we take the current system state (and all users) snapshots in an autogenerated state save. Then, after the first apt operation, we rebuild the boot menu to take into account the newly create state save. This will allow reverting when needed. We delayed the menu build only after the first apt operation to ensure we limit the waiting time to have the new software installed, upgraded or removed: building the bootloader menu can indeed take some time.
 
 ```sh
 $ apt <something>
@@ -297,6 +303,7 @@ Both hooks are listed in `/etc/apt/apt.conf.d/90_zsys_system_autosnapshot` which
 ### State garbage collector triggering
 
 Similarly to user state saving, we have a system timer and unit running once a day:
+
 ```sh
 $ cat /lib/systemd/system/zsys-gc.timer
 [Unit]
@@ -325,6 +332,7 @@ ExecStart=/sbin/zsysctl service gc
 ### Zsysd activation
 
 The ZSys daemon, zsysd, is socket activated (the unix socket is `/run/zsysd.sock`) associated to its service:
+
 ```sh
 $ cat /lib/systemd/system/zsysd.socket
 [Unit]
@@ -435,4 +443,4 @@ By the way, an awesome easy way to contribute and help without too much programm
 
 We are now going to start looking in details how this all interact with the underlying lower level material, like partitions, ZFS datasets and various inherent properties. See you there :)
 
-Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/).
+Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355).
