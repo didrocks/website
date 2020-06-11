@@ -1,18 +1,17 @@
 ---
 title: "ZFS focus on Ubuntu 20.04 LTS: ZSys partition layout"
-date: 2020-05-01T09:36:19+02:00
+date: 2020-06-11T11:44:19+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
 banner: "/images/focal/zfs_install_step4.png"
 type: "post"
-manualdiscourse: "https://discourse.ubuntu.com/t/XXXXX"
-draft: True
+manualdiscourse: "https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355"
 ---
 
 # ZFS focus on Ubuntu 20.04 LTS: ZSys partition layout
 
-We have covered ZSys quite extensively over the past blog posts, from [what’s new](https://didrocks.fr/TODO) to [ its functionalities](https://didrocks.fr/TODO) in details.
+We have covered ZSys quite extensively over the past blog posts, from [what’s new](/2020/05/21/zfs-focus-on-ubuntu-20.04-lts-whats-new/) to [its functionalities](/2020/05/26/zfs-focus-on-ubuntu-20.04-lts-zsys-general-presentation/) in details.
 
-It’s now time to look at the other part of the system: what happens when you install your system? Which partition layout and why are we choosing this one? What ZFS datasets are created and how do we lay them out? We will answer to all those questions from this part of the blog post series. Let’s start right away with the partioning method.
+It’s now time to look at the other part of the system: what happens when you install your system? Which partition layout and why are we choosing this one? What ZFS datasets are created and how do we lay them out? We will answer to all those questions from this part of the blog post series. Let’s start right away with the partitioning method.
 
 ## Partition layout
 
@@ -76,7 +75,7 @@ So, we have `/boot`, `/boot/grub`, `/boot/efi` (amongst others) to mount. ZFS ha
 
 You thus normally ends up with `/boot/grub`, `/boot/efi` and nothing else: as `/boot` is not empty, ZFS won’t mount bpool over `/boot` and your kernels/initramfs finishes being installed on rpool, GRUB content is messed up and so on.
 
-This is why we have enabled the new ZFS mount generator, as explained [in the previous article](https://didrocks.fr/TODO), which generates any needed `.mount` units for systemd to mount everything in order.
+This is why we have enabled the new ZFS mount generator, as explained [in the previous article](/2020/06/09/zfs-focus-on-ubuntu-20.04-lts-zsys-for-system-administrators/), which generates any needed `.mount` units for systemd to mount everything in order.
 
 ```sh
 $ ls /run/systemd/generator/*.mount
@@ -120,4 +119,4 @@ This should shed some lights on the various partitioning decisions we took for o
 
 This being clarified, it’s now time to look at how we organize our ZFS datasets. What are exactly created on those `bpool` and `rpool` ZFS pools and why do we have this dataset layout? So many questions, one place to read it! See you there :)
 
-Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/).
+Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355).
