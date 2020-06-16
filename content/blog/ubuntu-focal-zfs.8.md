@@ -1,16 +1,15 @@
 ---
 title: "ZFS focus on Ubuntu 20.04 LTS: ZSys dataset layout"
-date: 2020-05-01T09:36:19+02:00
+date: 2020-06-16T15:51:19+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
 banner: "/images/focal/zfs_install_done.png"
 type: "post"
-manualdiscourse: "https://discourse.ubuntu.com/t/XXXXX"
-draft: True
+manualdiscourse: "https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355"
 ---
 
 # ZFS focus on Ubuntu 20.04 LTS: ZSys dataset layout
 
-After looking at the [global partition layout](https://didrocks.fr/TODO) when you select the ZFS option on ubuntu 20.04 LTS, let’s dive in details what are exactly inside those ZFS pools, I name `bpool` and `rpool`!
+After looking at the [global partition layout](/2020/06/11/zfs-focus-on-ubuntu-20.04-lts-zsys-partition-layout/) when you select the ZFS option on ubuntu 20.04 LTS, let’s dive in details what are exactly inside those ZFS pools, I name `bpool` and `rpool`!
 
 We are mainly focusing on two kinds of ZFS datasets: filesytem datasets and snapshot datasets. We already eluded to them multiple times in previous blog posts, but if you want to follow this section, I highly recommend following this couple of ZFS tutorials ([setup and basics](https://ubuntu.com/tutorials/setup-zfs-storage-pool) and [snapshot and clones](https://ubuntu.com/tutorials/using-zfs-snapshots-clones)) or watching this [introduction](https://www.youtube.com/watch?v=3oG-1U5AI9A). This will help guiding you on those concepts.
 
@@ -60,7 +59,7 @@ You will see that the state name corresponds to the dataset mounting on `/` (`rp
 
 ### System states and their datasets
 
-System datasets are datasets which forms… your installed system! (except `/boot/efi` and `/boot/grub` which are on a separate partition as explained [in the previous article about partitioning](https://didrocks.fr/TODO)). You can see that kernel and initramfs are located on `bpool/BOOT/ubuntu_e2wti1` matching the `rpool/ROOT/ubuntu_e2wti1` base name. Any of those and descendant are considered as system datasets.
+System datasets are datasets which forms… your installed system! (except `/boot/efi` and `/boot/grub` which are on a separate partition as explained [in the previous article about partitioning](/2020/06/11/zfs-focus-on-ubuntu-20.04-lts-zsys-partition-layout/)). You can see that kernel and initramfs are located on `bpool/BOOT/ubuntu_e2wti1` matching the `rpool/ROOT/ubuntu_e2wti1` base name. Any of those and descendant are considered as system datasets.
 
 In general, every datasets (and its children) under **<pool_name>/ROOT/<DATASET_ROOT>** will form a single system state. If a matching **<DATASET_ROOT>** is found in any **<other_pool_name>/BOOT/<DATASET_ROOT>** with the same name, it will be considered as part of the same state. This is not mandatory though and if we have multiple candidates, we always prefer **<pool_name>/ROOT/<DATASET_ROOT>/boot** over **<pool_name>/BOOT/<DATASET_ROOT>** over **<other_pool_name>/BOOT/<DATASET_ROOT>** and over **<pool_name>/ROOT/<DATASET_ROOT>** `/boot` subdirectory on `/` dataset. Note that we have some optimization for our default layout with a **bpool/BOOT/<DATASET_ROOT>** when generating our grub menu and loading our system, but this isn’t mandatory.
 
@@ -97,7 +96,7 @@ $ zsysctl show --full
          - rpool/USERDATA/root_wbdgr3@autozsys_k8uf7o
 ```
 
-Here, all system datasets snapshot names match the generated `@autozsys_k8uf7o`. As a reminder from [a previous blog post](https://didrocks.fr/TODO), a history state save can also be formed of filesystem dataset clones instead of snapshots. Clones are like snapshots in our case, after a state revert (and thus, have a different suffix after `_`). However, this changes nothing to this concept.
+Here, all system datasets snapshot names match the generated `@autozsys_k8uf7o`. As a reminder from [a previous blog post](/2020/05/28/zfs-focus-on-ubuntu-20.04-lts-zsys-general-principle-on-state-management/), a history state save can also be formed of filesystem dataset clones instead of snapshots. Clones are like snapshots in our case, after a state revert (and thus, have a different suffix after `_`). However, this changes nothing to this concept.
 
 If you are a ZFS expert, you are probably wondering why we have so many datasets in our default layout. Hold on your excitement, you have been able to wait for 8 blog posts to arrive to this point, I just ask you to wait for a couple of more paragraphs! :)
 
@@ -259,4 +258,4 @@ Note that ZSys has no hardcoded layout knowledge. It only segregated datasets in
 
 This being done, I think there is few but important domains remaining to be covered. As you saw in the previous command, we know exactly what kernel you booted with, we also associat user datasets to system datasets despite having different names, we keep track of the last successful boot time and last used. How is that all stored? That will be our next adventure in this blog post series. See you there :)
 
-Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/).
+Meanwhile, join the discussion via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355).
