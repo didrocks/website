@@ -1,18 +1,17 @@
 ---
 title: "ZFS focus on Ubuntu 20.04 LTS: ZSys properties on ZFS datasets"
-date: 2020-05-01T09:36:19+02:00
+date: 2020-06-19T12:15:19+02:00
 tags: [ "pu", "ubuntu", "zfs" ]
 banner: "/images/focal/zfs_user_properties.png"
 type: "post"
-manualdiscourse: "https://discourse.ubuntu.com/t/XXXXX"
-draft: True
+manualdiscourse: "https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355"
 ---
 
 # ZFS focus on Ubuntu 20.04 LTS: ZSys properties on ZFS datasets
 
-We are almost done in our long journey [presenting our ZFS work](https://didrocks.fr/TODO) on Ubuntu 20.04 LTS. The last piece to highlight is how we annotate datasets with some user properties to store metadata needed on boot and on state revert. As we stated on our [ZSys presentation article](https://didrocks.fr/TODO), one of the main principles is to avoid using a dedicated database which can quickly go out of sync with the real system: we store - and thus, rely - only on ZFS properties that are set on the datasets themselves. Taking your pool and moving it to another machine is sufficient.
+We are almost done in our long journey [presenting our ZFS work](/2020/05/21/zfs-focus-on-ubuntu-20.04-lts-whats-new/) on Ubuntu 20.04 LTS. The last piece to highlight is how we annotate datasets with some user properties to store metadata needed on boot and on state revert. As we stated on our [ZSys presentation article](/2020/05/26/zfs-focus-on-ubuntu-20.04-lts-zsys-general-presentation/), one of the main principles is to avoid using a dedicated database which can quickly go out of sync with the real system: we store - and thus, rely - only on ZFS properties that are set on the datasets themselves. Taking your pool and moving it to another machine is sufficient.
 
-This will probably give you the necessary information (alongside with the post on [partition](https://didrocks.fr/TODO) and [dataset](https://didrocks.fr/TODO) layouts) if you want to turn your existing ZFS system to one compatible with ZSys.
+This will probably give you the necessary information (alongside with the post on [partition](/2020/06/11/zfs-focus-on-ubuntu-20.04-lts-zsys-partition-layout/) and [dataset](/2020/06/16/zfs-focus-on-ubuntu-20.04-lts-zsys-dataset-layout/) layouts) if you want to turn your existing ZFS system to one compatible with ZSys.
 
 Without further ado, it’s time to directly check all that on details!
 
@@ -246,4 +245,4 @@ Phew! We hope that now that you have a complete pictures on all those concepts, 
 
 If you are interested in reading further ahead, you can check our [in progress specification](https://docs.google.com/document/d/1oV5-ef-fqzML4MGd2LAHRcLdR0USKkOmrJW-AP0CmC4/edit) and [follow our github project](https://github.com/orgs/ubuntu/projects/1). This is a good place, as [the upstream ZSys repo is](https://github.com/ubuntu/zsys), to see how you can contribute to this effort and help shaping the future on ZFS on root on ubuntu! This is in addition to all the enhancements, maintenance and fixes that are heading Ubuntu 20.04 LTS right now.
 
-I hope this read was pleasing to you and that understanding the internals and challenges has highlighted why built this tool, how much thoughts and great care we took in crafting the whole system. Of course, there would be a lot more to say, like how we built our extensive testsuite on ZSys itself with the internal in-memory mock and real ZFS system stack, how we have hundreds of tests on our grub menu generation, how we handled some optimizations over the [go-libzfs package](https://github.com/bicomsystems/go-libzfs) and much more! But we have to stop at point and this is the good place for it. We can always continue the conversation via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/).
+I hope this read was pleasing to you and that understanding the internals and challenges has highlighted why built this tool, how much thoughts and great care we took in crafting the whole system. Of course, there would be a lot more to say, like how we built our extensive testsuite on ZSys itself with the internal in-memory mock and real ZFS system stack, how we have hundreds of tests on our grub menu generation, how we handled some optimizations over the [go-libzfs package](https://github.com/bicomsystems/go-libzfs) and much more! But we have to stop at point and this is the good place for it. We can always continue the conversation via the [dedicated Ubuntu discourse thread](https://discourse.ubuntu.com/t/zfs-focus-on-ubuntu-20-04-lts-blog-posts/16355).
